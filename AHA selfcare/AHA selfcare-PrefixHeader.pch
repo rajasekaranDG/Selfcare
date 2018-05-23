@@ -1,0 +1,18 @@
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#ifndef DEBUG
+#define NSLog(...) /* suppress NSLog when in release mode */
+#define print(...) /* suppress print when in release mode */
+#endif
+
+#endif

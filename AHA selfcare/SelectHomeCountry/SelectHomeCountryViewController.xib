@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectHomeCountryViewController" customModule="AHA_selfcare" customModuleProvider="target">
+            <connections>
+                <outlet property="myBtnSave" destination="nFO-OA-whG" id="9dZ-cQ-Ymf"/>
+                <outlet property="myTxtFldHomeCountry" destination="m4L-Yb-pnH" id="tNj-eI-2A8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aha_health.png" translatesAutoresizingMaskIntoConstraints="NO" id="CKY-gi-xM2">
+                    <rect key="frame" x="97.5" y="100" width="180" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="f1q-2a-NAe"/>
+                        <constraint firstAttribute="height" constant="180" id="qxl-vN-Bwv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your home country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-e9-omA">
+                    <rect key="frame" x="20" y="326" width="335" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="JLf-QY-JJx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.1647058824" green="0.72397798300000005" blue="0.70698457960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-Yb-pnH">
+                    <rect key="frame" x="20" y="351" width="335" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Cz0-4C-PKG"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="278-Hg-1Gv"/>
+                    </connections>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tc-KU-l6S">
+                    <rect key="frame" x="20" y="389" width="335" height="2"/>
+                    <color key="backgroundColor" red="0.1647058824" green="0.72397798300000005" blue="0.70698457960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="5rU-kt-nNo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-OA-whG">
+                    <rect key="frame" x="147" y="401" width="80" height="40"/>
+                    <color key="backgroundColor" red="0.1647058824" green="0.72397798300000005" blue="0.70698457960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="0T2-ye-1xA"/>
+                        <constraint firstAttribute="width" constant="80" id="VLt-4Z-4PH"/>
+                    </constraints>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="myBtnSaveAction:" destination="-1" eventType="touchUpInside" id="sUr-gK-Tqg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="m4L-Yb-pnH" firstAttribute="leading" secondItem="hdE-e9-omA" secondAttribute="leading" id="1S6-IA-36b"/>
+                <constraint firstItem="nFO-OA-whG" firstAttribute="top" secondItem="m4L-Yb-pnH" secondAttribute="bottom" constant="10" id="A1I-Jr-2hG"/>
+                <constraint firstItem="m4L-Yb-pnH" firstAttribute="top" secondItem="hdE-e9-omA" secondAttribute="bottom" constant="10" id="D9D-t7-ls9"/>
+                <constraint firstItem="hdE-e9-omA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RI3-Bt-vH8"/>
+                <constraint firstItem="CKY-gi-xM2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vkd-Ic-3uu"/>
+                <constraint firstItem="hdE-e9-omA" firstAttribute="top" secondItem="CKY-gi-xM2" secondAttribute="bottom" constant="46" id="ZKV-mG-1u7"/>
+                <constraint firstItem="m4L-Yb-pnH" firstAttribute="trailing" secondItem="hdE-e9-omA" secondAttribute="trailing" id="aEC-ZS-gRQ"/>
+                <constraint firstItem="3tc-KU-l6S" firstAttribute="bottom" secondItem="m4L-Yb-pnH" secondAttribute="bottom" id="b3Q-tu-k7e"/>
+                <constraint firstItem="CKY-gi-xM2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="bLo-wm-fXv"/>
+                <constraint firstItem="3tc-KU-l6S" firstAttribute="trailing" secondItem="m4L-Yb-pnH" secondAttribute="trailing" id="gb8-qJ-Z39"/>
+                <constraint firstItem="hdE-e9-omA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="hvJ-P3-5vd"/>
+                <constraint firstAttribute="trailing" secondItem="hdE-e9-omA" secondAttribute="trailing" constant="20" id="o1u-8t-cS3"/>
+                <constraint firstItem="nFO-OA-whG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vUk-av-SWu"/>
+                <constraint firstItem="3tc-KU-l6S" firstAttribute="leading" secondItem="m4L-Yb-pnH" secondAttribute="leading" id="wRH-7x-xbi"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="aha_health.png" width="480" height="480"/>
+    </resources>
+</document>

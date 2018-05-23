@@ -1,0 +1,6 @@
+framework module Pods_AHA_selfcare {
+  umbrella header "Pods-AHA selfcare-umbrella.h"
+
+  export *
+  module * { export * }
+}
