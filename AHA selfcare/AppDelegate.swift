@@ -14,6 +14,8 @@ import FirebaseCore
 import FirebaseAnalytics
 import FirebaseMessaging
 import FirebaseInstanceID
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         FirebaseApp.configure(options: options)
 
+        Fabric.with([Crashlytics.self])
         self.initSetView()
         return true
     }

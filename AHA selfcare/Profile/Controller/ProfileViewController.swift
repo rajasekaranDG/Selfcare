@@ -47,7 +47,8 @@ class ProfileViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
-        self.scrollMain.contentSize = CGSize(width: PageWidth, height: 690)
+        let PageHeight : CGFloat = (iPhone6Pluse) ? 750 : (iPhone6) ? 690 : 690
+        self.scrollMain.contentSize = CGSize(width: PageWidth, height: PageHeight)
 
         AppManager.sharedInstance.viewShadow(MainView: self.viewInfo)
         AppManager.sharedInstance.viewShadow(MainView: self.viewPlace)

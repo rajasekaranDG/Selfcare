@@ -14,6 +14,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
 
     var delegate : AnyObject?
     var stringDOB : NSString = ""
+    var isAgreeTerms = false
+    
     
     @IBOutlet weak var scrollViewMain : TPKeyboardAvoidingScrollView!
     @IBOutlet weak var imagePhoto : UIImageView!
@@ -190,7 +192,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         })
     }
     func isEmptyTextField(_ txt: String) -> Bool {
-        return ((txt == "") || (txt.characters.count ) == 0)
+        return ((txt == "") || (txt.count ) == 0)
     }
     func isValidEmail(_ checkString: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -219,7 +221,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             self.lblLineDOB.backgroundColor = UIColor.red
             self.lblErrorDOB.isHidden = false
         }
-        if(!(self.isEmptyTextField(self.textName.text!)) && (self.isValidEmail(self.textEmail.text!)) && !(self.isEmptyTextField(self.textPassword.text!)) && !(self.isEmptyTextField(self.textPhoneNumber.text!)) && !(self.isEmptyTextField(self.lableDateOfBirth.text!)) && (self.lableDateOfBirth.text != "Enter Your Date Of Birth")){
+        if(!(self.isEmptyTextField(self.textName.text!)) && (self.isValidEmail(self.textEmail.text!)) && !(self.isEmptyTextField(self.textPassword.text!)) && !(self.isEmptyTextField(self.textPhoneNumber.text!)) && !(self.isEmptyTextField(self.lableDateOfBirth.text!)) && (self.lableDateOfBirth.text != "Enter Your Date Of Birth")) && isAgreeTerms != false {
 
             let Parsedictionary: NSMutableDictionary = ["_id": self.textName.text!,
                                                         "email": self.textEmail.text!,
@@ -310,6 +312,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             }
             
         }
+        else if isAgreeTerms == false {
+//             self.showAlert(message: "Please " as String)
+        }
     }
     func showAlert(message: String) {
         
@@ -332,7 +337,18 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         let SignupVC : ReadPolicyViewController = ReadPolicyViewController(nibName : "ReadPolicyViewController" , bundle : nil)
         self.navigationController?.pushViewController(SignupVC, animated: true)
     }
-    
+     @IBAction func btnTermsandConditionTapped(_ sender: UIButton) {
+        
+        let btn = sender
+        
+        btn.isSelected = !btn.isSelected
+        
+        isAgreeTerms = false
+        if btn.isSelected {
+            isAgreeTerms = true
+        }
+       
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

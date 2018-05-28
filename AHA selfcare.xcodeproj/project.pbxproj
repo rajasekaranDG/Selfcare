@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44BFE91A20B697E700FDC5C1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91920B697E700FDC5C1 /* Session.swift */; };
+		44BFE91D20B698B300FDC5C1 /* SharedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91C20B698B300FDC5C1 /* SharedObject.swift */; };
+		44E2C4F320BC367E0009F798 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E2C4F220BC367E0009F798 /* Helper.swift */; };
 		9710918C1EBC1131001CEB3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710918B1EBC1131001CEB3A /* AppDelegate.swift */; };
 		971091931EBC1131001CEB3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971091911EBC1131001CEB3A /* Main.storyboard */; };
 		971091951EBC1131001CEB3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 971091941EBC1131001CEB3A /* Assets.xcassets */; };
@@ -341,6 +344,9 @@
 
 /* Begin PBXFileReference section */
 		3FB2B425919FDC38D272C29D /* Pods-AHA selfcare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHA selfcare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHA selfcare/Pods-AHA selfcare.debug.xcconfig"; sourceTree = "<group>"; };
+		44BFE91920B697E700FDC5C1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		44BFE91C20B698B300FDC5C1 /* SharedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedObject.swift; sourceTree = "<group>"; };
+		44E2C4F220BC367E0009F798 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		66CC0236953422B8E2BB619A /* Pods_AHA_selfcare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHA_selfcare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971091881EBC1131001CEB3A /* AHA selfcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AHA selfcare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9710918B1EBC1131001CEB3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -772,6 +778,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		44BFE91720B6979F00FDC5C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44E2C4F220BC367E0009F798 /* Helper.swift */,
+				44BFE91B20B6989700FDC5C1 /* Values */,
+				44BFE91820B697A600FDC5C1 /* Session */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44BFE91820B697A600FDC5C1 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				44BFE91920B697E700FDC5C1 /* Session.swift */,
+			);
+			name = Session;
+			path = "../New Group/Session";
+			sourceTree = "<group>";
+		};
+		44BFE91B20B6989700FDC5C1 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				44BFE91C20B698B300FDC5C1 /* SharedObject.swift */,
+			);
+			path = Values;
+			sourceTree = "<group>";
+		};
 		9710917F1EBC1130001CEB3A = {
 			isa = PBXGroup;
 			children = (
@@ -807,6 +840,7 @@
 		9710918A1EBC1131001CEB3A /* AHA selfcare */ = {
 			isa = PBXGroup;
 			children = (
+				44BFE91720B6979F00FDC5C1 /* Model */,
 				9710918B1EBC1131001CEB3A /* AppDelegate.swift */,
 				973E219F1EBCBCEF0079B161 /* AppManager.swift */,
 				973E219A1EBCBB7A0079B161 /* KConstants.swift */,
@@ -1716,8 +1750,8 @@
 				971091851EBC1131001CEB3A /* Frameworks */,
 				971091861EBC1131001CEB3A /* Resources */,
 				4578A09DED951E42B50448FD /* [CP] Embed Pods Frameworks */,
-				AE1F5C02259472859872359F /* [CP] Copy Pods Resources */,
 				971952291ECEFA0B0035B20C /* ShellScript */,
+				44E2C4F020BBF3580009F798 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2037,6 +2071,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		44E2C4F020BBF3580009F798 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" de1cd9a9f35c1180e8266c9909f28b25fad2f375 03472ec69e25e59182f843c362198877d4ec8f30bf779fd8fb39bb0e938495ac";
+		};
 		4578A09DED951E42B50448FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2082,21 +2129,6 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 48677540a4189ae0ad017028b9a636193ab8de36 b698a7b74c0201e7f8f01bf8cf40cdb32552c0c89be1abdb9cf2c7d0b3a63b67";
 		};
-		AE1F5C02259472859872359F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHA selfcare/Pods-AHA selfcare-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2121,6 +2153,7 @@
 				9766B5541EE7073500FE7D3D /* RPFloatingPlaceholderTextView.m in Sources */,
 				973E217C1EBCBB720079B161 /* UIAlertView+AFNetworking.m in Sources */,
 				973E21771EBCBB720079B161 /* AFURLConnectionOperation.m in Sources */,
+				44BFE91A20B697E700FDC5C1 /* Session.swift in Sources */,
 				97C2C5471EED21C000E6003B /* String.swift in Sources */,
 				9791B0AF1EF544230074EF7F /* NSMutableString+TagReplace.m in Sources */,
 				973E21701EBCBB720079B161 /* NSData+AES128.m in Sources */,
@@ -2174,6 +2207,7 @@
 				9797D1751EF184C0006A253E /* RecordsViewController.swift in Sources */,
 				973E21A01EBCBCEF0079B161 /* AppManager.swift in Sources */,
 				9760578E1EC21FD4008F044B /* CellAssessment.swift in Sources */,
+				44BFE91D20B698B300FDC5C1 /* SharedObject.swift in Sources */,
 				973E21881EBCBB720079B161 /* CFilteringJSONSerializer.m in Sources */,
 				97E319381F06C82400E4AD9C /* StartAssessmentViewController.swift in Sources */,
 				976057761EC21D75008F044B /* AssessmentViewController.swift in Sources */,
@@ -2199,6 +2233,7 @@
 				97C2C5381EED1E4B00E6003B /* BaseTableViewCell.swift in Sources */,
 				973E21921EBCBB720079B161 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9718632B1ED739510054BE7D /* ViewSelectAnswers.swift in Sources */,
+				44E2C4F320BC367E0009F798 /* Helper.swift in Sources */,
 				973E21851EBCBB720079B161 /* MBProgressHUD.m in Sources */,
 				978BC7411ED3316100A9074C /* ViewNumber.swift in Sources */,
 				97E3192E1F06B63900E4AD9C /* EditProfileViewController.swift in Sources */,

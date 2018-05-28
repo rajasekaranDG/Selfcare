@@ -49,13 +49,13 @@ class StartAssessmentViewController: UIViewController {
         if ((AppManager.sharedInstance.appVersion() == "PREMIUM") || (AppManager.sharedInstance.appVersion() == "SUBSCRIBED")){
             
         }
-        else {
-            let viewInvite: ViewInvite = (Bundle .main.loadNibNamed("ViewInvite", owner: self, options: nil)![0] as! ViewInvite)
-            viewInvite.frame = CGRect(x: 0, y: 64, width: self.view.width(), height: self.view.height())
-            viewInvite.delegate = self
-            self.view.addSubview(viewInvite)
-            viewInvite.lblCode.text = AppManager.sharedInstance.referralCode()
-        }
+//        else {
+//            let viewInvite: ViewInvite = (Bundle .main.loadNibNamed("ViewInvite", owner: self, options: nil)![0] as! ViewInvite)
+//            viewInvite.frame = CGRect(x: 0, y: 64, width: self.view.width(), height: self.view.height())
+//            viewInvite.delegate = self
+//            self.view.addSubview(viewInvite)
+//            viewInvite.lblCode.text = AppManager.sharedInstance.referralCode()
+//        }
         
         let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
         

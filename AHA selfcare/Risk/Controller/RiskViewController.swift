@@ -45,17 +45,17 @@ class RiskViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if(AppManager.sharedInstance.appVersion() == "SUBSCRIBED"){
+//        if(AppManager.sharedInstance.appVersion() == "SUBSCRIBED"){
             self.tabelRiskManagement.register(UINib(nibName: "CellRiskManagement", bundle: nil), forCellReuseIdentifier: "CellRiskManagementID")
             self.fetchRishManagemnet()
-        }
-        else {
-            let viewInvite: ViewInvite = (Bundle .main.loadNibNamed("ViewInvite", owner: self, options: nil)![0] as! ViewInvite)
-            viewInvite.frame = CGRect(x: 0, y: 64, width: self.view.width(), height: self.view.height())
-            viewInvite.delegate = self
-            self.view.addSubview(viewInvite)
-            viewInvite.lblCode.text = AppManager.sharedInstance.referralCode()
-        }
+//        }
+//        else {
+//            let viewInvite: ViewInvite = (Bundle .main.loadNibNamed("ViewInvite", owner: self, options: nil)![0] as! ViewInvite)
+//            viewInvite.frame = CGRect(x: 0, y: 64, width: self.view.width(), height: self.view.height())
+//            viewInvite.delegate = self
+//            self.view.addSubview(viewInvite)
+//            viewInvite.lblCode.text = AppManager.sharedInstance.referralCode()
+//        }
     }
     func fetchRishManagemnet () {
         MBProgressHUD.showAdded(to: self.view, animated: true)

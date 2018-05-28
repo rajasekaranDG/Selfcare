@@ -305,8 +305,7 @@
     return [NSMutableArray arrayWithObjects:
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Blood Glucose*",@"Title",@"Number",@"Type",@"Blood Glucose",@"Hint",@"1",@"RequiredFlag",@"",@"Answer",@"bloodGlucoseValue",@"addParams", nil],
             
-            [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Blood Glucose Unit",@"Title",@"Dialog_single",@"Type",@"Blood Glucose Unit",@"Hint",@"0",@"RequiredFlag",@"mmol/L",@"Answer",@"bloodGlucoseUnit",@"addParams", nil],
-
+           
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Context*",@"Title",@"Dialog_single",@"Type",@"Select",@"Hint",@"1",@"RequiredFlag",@"",@"Answer",@"context",@"addParams", nil],
             
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Last Meal",@"Title",@"TextEdit",@"Type",@"Pasta,Pizza,Rice with Curry, etc..,",@"Hint",@"0",@"RequiredFlag",@"",@"Answer",@"beforeMeal",@"addParams", nil],
@@ -316,6 +315,9 @@
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Medication Time",@"Title",@"Dialog_single",@"Type",@"Medication Time",@"Hint",@"0",@"RequiredFlag",@"",@"Answer",@"medicationTime",@"addParams", nil],
             
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Measurement Date*",@"Title",@"Date",@"Type",@"Measurement Date",@"Hint",@"1",@"RequiredFlag",@"",@"Answer",@"measurementDate",@"addParams", nil],
+            
+            [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Blood Glucose Unit",@"Title",@"Dialog_single",@"Type",@"Blood Glucose Unit",@"Hint",@"0",@"RequiredFlag",@"mmol/L",@"Answer",@"bloodGlucoseUnit",@"addParams", nil],
+
             nil];
 }
 -(NSMutableArray *)InsertWeigtDictionary {
@@ -586,7 +588,7 @@
 -(double)ConvertMilliSeconds :(NSString *)MeasurementDate {
     // Convert string to date object
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"]; //:ss
     NSDate *date = [dateFormat dateFromString:MeasurementDate];
     
     //// 1419151980000 -- milli seconds

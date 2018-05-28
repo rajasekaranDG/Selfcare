@@ -39,12 +39,14 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
 //        }
 //    }
     @IBAction func showHidePassword(_ sender : UIButton){
+        
+        let btn = sender
+        btn.isSelected = !btn.isSelected
+        
         if(self.buttonShow.isSelected){
-            self.buttonShow.isSelected = false
             self.textPassword.isSecureTextEntry = false
         }
         else {
-            self.buttonShow.isSelected = true
             self.textPassword.isSecureTextEntry = true
         }
     }
@@ -148,6 +150,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
                             UserDefaultsDetails.setValue(stringDOB as String , forKey: "dataOfBirth")
                             UserDefaultsDetails.setValue(detailDic["email"] as? String , forKey: "email")
                             UserDefaultsDetails.setValue(detailDic["gender"] as? String , forKey: "gender")
+                           
                             UserDefaultsDetails.setValue(AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic , key: "height") as String , forKey: "height")
                             UserDefaultsDetails.setValue(AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic , key: "weight") as String , forKey: "weight")
                             UserDefaultsDetails.setValue(detailDic["govtId"] as? String , forKey: "govtId")

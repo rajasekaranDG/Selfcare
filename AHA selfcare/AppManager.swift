@@ -327,7 +327,8 @@ class AppManager: NSObject {
         var Assigned : NSString = ""
         if ((DetailDictionary[KeyValue] as! NSObject != NSNull()) && (DetailDictionary[KeyValue] != nil)) {
             if let str = DetailDictionary[KeyValue] as? NSNumber {
-                Assigned = str.stringValue as NSString
+                var roundOffValue = Int(str)//str.stringValue as NSString
+                Assigned = String(roundOffValue) as NSString
             }
             else {
                 Assigned = NSString(format:"%@", DetailDictionary[KeyValue] as! String)
@@ -423,7 +424,7 @@ class AppManager: NSObject {
     //Mark: Convert NSDate to NSString
     func conertDateToString(Date: NSDate, formate DateFormat: String) -> String {
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm" //:ss
         //Optionally for time zone conversions
         formatter.timeZone = NSTimeZone.system
         formatter.dateFormat = DateFormat

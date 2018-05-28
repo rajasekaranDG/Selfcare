@@ -168,8 +168,21 @@ class UpdateUserInfoViewController: UIViewController {
         if self.isEmptyTextField(self.textFirstName.text!) {
             self.showAlert(message: "Please enter firstname")
         }
-        if self.isEmptyTextField(self.textLastName.text!) {
-            self.showAlert(message: "Please enter lastname")
+//        if self.isEmptyTextField(self.textLastName.text!) {
+//            self.showAlert(message: "Please enter lastname")
+//        }
+       
+        if self.isEmptyTextField(self.textCountry.text!) {
+            self.showAlert(message: "Please enter Country")
+        }
+        if self.isEmptyTextField(self.textState.text! as String) {
+            self.showAlert(message: "Please enter State")
+        }
+        if self.isEmptyTextField(self.textCity.text! as String) {
+            self.showAlert(message: "Please enter City")
+        }
+        if self.isEmptyTextField(self.textPincode.text! as String) {
+            self.showAlert(message: "Please enter Pincode")
         }
         if self.isEmptyTextField(self.textHeigth.text!) {
             self.showAlert(message: "Please enter height")
@@ -178,33 +191,22 @@ class UpdateUserInfoViewController: UIViewController {
             self.showAlert(message: "Please enter weight")
         }
         if self.isEmptyTextField(self.genderString as String) {
-            self.showAlert(message: "Please enter gender")
-        }
-        if self.isEmptyTextField(self.genderString as String) {
-            self.showAlert(message: "Please enter Country")
-        }
-        if self.isEmptyTextField(self.genderString as String) {
-            self.showAlert(message: "Please enter State")
-        }
-        if self.isEmptyTextField(self.genderString as String) {
-            self.showAlert(message: "Please enter City")
-        }
-        if self.isEmptyTextField(self.genderString as String) {
-            self.showAlert(message: "Please enter Pincode")
+            self.showAlert(message: "Please select gender")
         }
 
-        if(!(self.isEmptyTextField(self.textFirstName.text!)) && !(self.isEmptyTextField(self.textLastName.text!)) && !(self.isEmptyTextField(self.textHeigth.text!)) && !(self.isEmptyTextField(self.textWeight.text!)) && !(self.isEmptyTextField(self.genderString as String))  && !(self.isEmptyTextField(self.textCountry.text!)) && !(self.isEmptyTextField(self.textState.text!)) && !(self.isEmptyTextField(self.textCity.text!)) && !(self.isEmptyTextField(self.textPincode.text!))){
+        if(!(self.isEmptyTextField(self.textFirstName.text!)) &&  !(self.isEmptyTextField(self.textHeigth.text!)) && !(self.isEmptyTextField(self.textWeight.text!)) && !(self.isEmptyTextField(self.genderString as String))  && !(self.isEmptyTextField(self.textCountry.text!)) && !(self.isEmptyTextField(self.textState.text!)) && !(self.isEmptyTextField(self.textCity.text!)) && !(self.isEmptyTextField(self.textPincode.text!))){
             
             let height : String = (self.textHeigth.text! == "") ? "0" : self.textHeigth.text!
             let weight : String = (self.textWeight.text! == "") ? "0" : self.textWeight.text!
             let HeightInt = Int(height)
-            let HeightNumber = NSNumber(value:HeightInt!)
-            let WeightInt = Int(weight)
-            let WeightNumber = NSNumber(value:WeightInt!)
+            let WeightIntValue = Int(weight)
+//            let HeightNumber = NSNumber(value:HeightInt!)
+//            let WeightInt = WeightIntValue
+//            let WeightNumber = NSNumber(value:WeightInt!)
             let Parsedictionary: NSMutableDictionary = ["firstName": self.textFirstName.text!,
                                                         "lastname": self.textLastName.text!,
-                                                        "height": HeightNumber,
-                                                        "weight": WeightNumber,
+                                                        "height": height,
+                                                        "weight": weight,
                                                         "govtId": self.textID.text!,
                                                         "gender": self.genderString,
                                                         "country": self.textCountry.text!,

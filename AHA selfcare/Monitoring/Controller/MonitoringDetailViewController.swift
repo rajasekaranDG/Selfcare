@@ -124,7 +124,8 @@ class MonitoringDetailViewController: UIViewController {
         if self.AddDataVC != nil{
             self.AddDataVC.view .removeFromSuperview();
         }
-        self.monthlyClick("")
+        //self.monthlyClick("")
+        self .weeklyClick("")
     }
     @IBAction func HistoryClick(_ sender: Any) {
         self.imageSummary.isHighlighted = false
@@ -640,21 +641,27 @@ class MonitoringDetailViewController: UIViewController {
                 let lineChart1 = YZLineChartModel()
                 lineChart1.title = "title1"
                 lineChart1.data = self.arraySystolic as! [Any]
-                lineChart1.lineColor = UIColor(red: 231.0/255, green: 122.0/255, blue: 4.0/255, alpha: CGFloat(1))
+                
+                lineChart1.lineColor = HELPER.hexStringToUIColor(hex: "02D02A") //green
+               
+                //UIColor(red: 231.0/255, green: 122.0/255, blue: 4.0/255, alpha: CGFloat(1))
                 lineArray.add(lineChart1)
+                
             }
             if(self.arrayDiastolic.count != 0){
                 let lineChart2 = YZLineChartModel()
                 lineChart2.title = "title1"
                 lineChart2.data = self.arrayDiastolic as! [Any]
-                lineChart2.lineColor = UIColor(red: 228.0/255, green: 221.0/255, blue: 1.0/255, alpha: CGFloat(1))
+                lineChart2.lineColor = HELPER.hexStringToUIColor(hex: "E77A04") //orange
+                //UIColor(red: 228.0/255, green: 221.0/255, blue: 1.0/255, alpha: CGFloat(1))
                 lineArray.add(lineChart2)
             }
             if(self.arrayHeartRate.count != 0){
                 let lineChart3 = YZLineChartModel()
                 lineChart3.title = "title1"
                 lineChart3.data = self.arrayHeartRate as! [Any]
-                lineChart3.lineColor = UIColor(red: 2.0/255, green: 208.0/255, blue: 42.0/255, alpha: CGFloat(1))
+                lineChart3.lineColor = HELPER.hexStringToUIColor(hex: "E4DD01") //yellow
+                //UIColor(red: 2.0/255, green: 208.0/255, blue: 42.0/255, alpha: CGFloat(1))
                 lineArray.add(lineChart3)
             }
             if(lineArray.count != 0){
@@ -777,6 +784,8 @@ class MonitoringDetailViewController: UIViewController {
         let urlString = self.titleString.replacingOccurrences(of: " ", with: "")
         return urlString
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

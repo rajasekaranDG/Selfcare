@@ -10,4 +10,6 @@ target ‘AHA selfcare’ do
 	pod 'UICircularProgressRing'
 	pod 'PhoneNumberKit', '~> 1.2'
     pod 'DropDown'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end

@@ -18,7 +18,7 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.labelMessage.text = "AHA Health App does not replace Doctor Advice and the Users or Patients must only use the app in conjunction with clinician's advice. \n \n AHA Health accept no responsibility for clinical use or misuse of this App."
+        self.labelMessage.text = "Welcome \(AppManager.sharedInstance.userName()) \n \n AHA Health App does not replace Doctor Advice and the Users or Patients must only use the app in conjunction with clinician's advice. \n \n AHA Health accept no responsibility for clinical use or misuse of this App."
         
     }
     @IBAction func continueClick(_ sender: Any) {

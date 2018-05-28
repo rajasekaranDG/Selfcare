@@ -139,10 +139,16 @@ class SelectHomeCountryViewController: UIViewController, UITextFieldDelegate {
         MBProgressHUD.showAdded(to: myBtnSave, animated: true)
         
         
+        
         if  let aText = myTxtFldHomeCountry.text {
             
             if aText.length > 0 {
-                
+                let countryName = UserDefaultsDetails.value(forKey: kCountryName) as? String
+                if countryName == aText {
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                }
+
                 var aFilteredArray = [String] ()
                 
                 let aPredicateName = NSPredicate(format:"SELF CONTAINS[c] %@",aText)
@@ -205,6 +211,12 @@ class SelectHomeCountryViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
         
+    }
+    
+    // MARK:- Button Actions
+    
+    @IBAction func backClick(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation

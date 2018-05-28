@@ -34,7 +34,7 @@ class ViewDOB: UIView {
         else {
             self.lblTitle.text = self.TitleString as String
         }
-        self.lblDOB.text = AppManager.sharedInstance.conertDateToString(Date: Date() as NSDate, formate: "yyyy-MM-dd HH:mm:ss")
+        self.lblDOB.text = AppManager.sharedInstance.conertDateToString(Date: Date() as NSDate, formate: "yyyy-MM-dd hh:mm") //:ss
         self.lblDOB.textColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.000)
         if(self.delegate is ViewAddDataPage) {
             let AddDataView : ViewAddDataPage = (self.delegate as! ViewAddDataPage)

@@ -334,6 +334,8 @@ class StartMonitoringViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         self.MonitoringClick("")
+       // self.tableMonitoring.addSubview(self.refreshControl)
+        
     }
     func updateMonitoringView() {
         if(AppManager.sharedInstance.MonitoringStartFlag() == ""){
@@ -387,7 +389,9 @@ class StartMonitoringViewController: UIViewController {
             do {
                 let jsonObject = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as! NSDictionary
                 print(jsonObject)
-
+                if(self.refreshControl.isRefreshing == true ) {
+                    self.refreshControl.endRefreshing()
+                }
                 if jsonObject["data"] != nil {
                     let userDictionary : NSDictionary = jsonObject["data"] as! NSDictionary
                     if(userDictionary.allKeys.count != 0){
@@ -399,8 +403,11 @@ class StartMonitoringViewController: UIViewController {
                             self.updateValue(detailDic: dictionaryDetails)
                         }
                         else {
-                            self.viewEmpty.isHidden = false
-                            self.scrollMain.isHidden = true
+                           // self.viewEmpty.isHidden = false
+                            //self.scrollMain.isHidden = true
+                            self.viewEmpty.isHidden = true
+                            self.scrollMain.isHidden = false
+                            self.updateValue(detailDic: dictionaryDetails)
                         }
                     }
                     else {
@@ -575,6 +582,20 @@ class StartMonitoringViewController: UIViewController {
                 }
         }
     }
+    
+    // MARK:- Pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.gray
+        refreshControl.addTarget(self, action: #selector(HistoryViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self .fetchSummaryDetail()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

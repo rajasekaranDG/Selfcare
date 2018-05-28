@@ -19,7 +19,8 @@ class HistoryViewController: UIViewController {
     var startDate : String = ""
     var endDate : String = ""
     var PageWidth : CGFloat = 0.0
-
+    @IBOutlet weak var labelEmpty : UILabel!
+    
     @IBOutlet weak var tableHistory : UITableView!
     @IBOutlet weak var labelTitle : UILabel!
 
@@ -33,7 +34,7 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.tableHistory.addSubview(self.refreshControl)
         self.PageWidth = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
 
         self.tableHistory.register(UINib(nibName: "CellHistory", bundle: nil), forCellReuseIdentifier: "CellHistoryID")
@@ -55,9 +56,17 @@ class HistoryViewController: UIViewController {
         Alamofire.request(escapedString!)
             .authenticate(user: AppManager.sharedInstance.userName(),password: AppManager.sharedInstance.userPassword())
             .responseJSON { response in
+                
+                if(self.refreshControl.isRefreshing == true ) {
+                    self.refreshControl.endRefreshing()
+                }
                 let jData = JSON(data: response.data!)
                 self.historyArray = jData.arrayValue
                 print(self.historyArray)
+                self.labelEmpty.isHidden = false
+                 if(self.historyArray.count != 0){
+                self.labelEmpty.isHidden = true
+                }
                 self.checkDate()
         }
     }
@@ -238,7 +247,10 @@ class HistoryViewController: UIViewController {
         }
         else if(self.moduleType == "Weight") {
             cell.lableMessage.isHidden = false
-            cell.lableMessage.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Weight is  %@ /  BMI is %@",DictionaryDetail["wgt"].stringValue, DictionaryDetail["bmi"].stringValue) as String, highlight: "Weight is", h2: "BMI is", size: 18, FontName: kFontSanFranciscoMedium)
+            
+            let bmiValue = Double(DictionaryDetail["bmi"].stringValue)
+            let roundOffValue = String(format: "%.2f", bmiValue ?? "")
+            cell.lableMessage.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Weight is  %@ /  BMI is %@",DictionaryDetail["wgt"].stringValue, roundOffValue ) as String, highlight: "Weight is", h2: "BMI is", size: 18, FontName: kFontSanFranciscoMedium)
         }
         else if(self.moduleType == "Sleep") {
             cell.lableMessage.isHidden = false
@@ -266,7 +278,20 @@ class HistoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // MARK:- Pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.gray
+        refreshControl.addTarget(self, action: #selector(HistoryViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
     
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+          self.fetchHistoryList()
+    }
+   
+  
 
     /*
     // MARK: - Navigation
@@ -278,4 +303,11 @@ class HistoryViewController: UIViewController {
     }
     */
 
+}
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }

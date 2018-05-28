@@ -162,14 +162,14 @@ class ViewAddDataPage: UIView {
             let DetailDic : NSMutableDictionary = self.arrayList[self.tag] as! NSMutableDictionary
             if(DetailDic["RequiredFlag"] as! String == "1"){
                 if(DetailDic["Answer"] as! String == ""){
-                    self.showAlert(message: "Please enter required fields")
+                    self.showAlert(message: "Please enter \(DetailDic["Title"]!)")//required fields
                     return
                 }
             }
             let DetailDics : NSMutableDictionary = self.arrayList[self.tag+1] as! NSMutableDictionary
             if(DetailDics["RequiredFlag"] as! String == "1"){
                 if(DetailDics["Answer"] as! String == ""){
-                    self.showAlert(message: "Please enter required fields")
+                    self.showAlert(message: "Please enter \(DetailDics["Title"]!)")
                     return
                 }
             }
@@ -199,8 +199,10 @@ class ViewAddDataPage: UIView {
                     }
                     else {
                         let AnswerInt = Int(dictionaryDetails["Answer"] as! String)
-                        let AnswerNumber = NSNumber(value:AnswerInt!)
+                        if let valueAnswer = AnswerInt {
+                        let AnswerNumber = NSNumber(value:valueAnswer)
                         Parsedictionary.setObject(AnswerNumber, forKey: dictionaryDetails["addParams"] as! String as NSCopying)
+                    }
                     }
                 }
                 else {

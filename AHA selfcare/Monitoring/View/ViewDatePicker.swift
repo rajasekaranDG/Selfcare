@@ -42,7 +42,7 @@ class ViewDatePicker: UIView {
     @IBAction func SelectDOBClick(_ sender: Any) {
         if(self.delegate is ViewDOB) {
             let DOBView : ViewDOB = (self.delegate as! ViewDOB)
-            DOBView.updateDetail(selectDate: AppManager.sharedInstance.conertDateToString(Date: self.datePicker.date as NSDate, formate: "yyyy-MM-dd HH:mm:ss"))
+            DOBView.updateDetail(selectDate: AppManager.sharedInstance.conertDateToString(Date: self.datePicker.date as NSDate, formate: "yyyy-MM-dd HH:mm")) //:ss
         }
         else if(self.delegate is SignupViewController){
             let SignupVC : SignupViewController = (self.delegate as! SignupViewController)
