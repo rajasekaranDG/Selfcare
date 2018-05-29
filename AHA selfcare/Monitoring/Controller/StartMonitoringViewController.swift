@@ -411,13 +411,21 @@ class StartMonitoringViewController: UIViewController {
                         }
                     }
                     else {
-                        self.viewEmpty.isHidden = false
-                        self.scrollMain.isHidden = true
+//                        self.viewEmpty.isHidden = false
+//                        self.scrollMain.isHidden = true
+                        let dictionaryDetails: NSMutableDictionary = NSMutableDictionary()
+                        self.viewEmpty.isHidden = true
+                        self.scrollMain.isHidden = false
+                        self.updateValue(detailDic: dictionaryDetails)
                     }
                 }
                 else {
-                    self.viewEmpty.isHidden = false
-                    self.scrollMain.isHidden = true
+//                    self.viewEmpty.isHidden = false
+//                    self.scrollMain.isHidden = true
+                    let dictionaryDetails: NSMutableDictionary = NSMutableDictionary()
+                    self.viewEmpty.isHidden = true
+                    self.scrollMain.isHidden = false
+                    self.updateValue(detailDic: dictionaryDetails)
                 }
             } catch let error {
                 print(error)

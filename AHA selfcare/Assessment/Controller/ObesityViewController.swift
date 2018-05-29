@@ -140,7 +140,8 @@ class ObesityViewController: UIViewController {
             self.lableLine.setX(self.viewResult.minx() + 10)
         }, completion: {(finished: Bool) -> Void in
         })
-        self.monthlyClick("")
+//        self.monthlyClick("")
+        self .weeklyClick("")
     }
     @IBAction func questionsClick(_ sender: Any) {
         self.imageResult.isHighlighted = false
@@ -170,14 +171,15 @@ class ObesityViewController: UIViewController {
         AppManager.sharedInstance.viewShadow(MainView: self.ViewMain)
         self.lableLine.setWidth(self.viewResult.width())
         self.lableLine.setX(0)
-        self.monthlyClick("")
+//        self.monthlyClick("")
+        self .weeklyClick("")
     }
     func fetchResultDetail () {
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let address = String(format: "%@assessment/Bmi/%@?startDate=%@&endDate=%@",kAPIDOMAIN,AppManager.sharedInstance.userName(),self.startDate,self.endDate) as String
         let escapedString = address.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-        
+        print(escapedString)
         Alamofire.request(escapedString!)
             .authenticate(user: AppManager.sharedInstance.userName(),password: AppManager.sharedInstance.userPassword())
             .responseJSON { response in

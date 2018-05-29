@@ -105,8 +105,14 @@ class StartAssessmentViewController: UIViewController {
                         }
                     }
                     else {
-                        self.viewEmpty.isHidden = false
-                        self.scrollMain.isHidden = true
+                       // self.viewEmpty.isHidden = false
+                       // self.scrollMain.isHidden = true
+                        
+                        self.viewEmpty.isHidden = true
+                        self.scrollMain.isHidden = false
+                        let dictionaryDetails: NSMutableDictionary = NSMutableDictionary()
+                        self.updateValue(detailDic: dictionaryDetails)
+                        self.checkDetail(detailDic: dictionaryDetails)
                     }
                 } catch let error {
                     print(error)
@@ -125,8 +131,11 @@ class StartAssessmentViewController: UIViewController {
         let chd : NSString = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "chd") as NSString
 
         if((diabetesScore.isEqual(to: "")) && (bmi.isEqual(to: "")) && (stroke.isEqual(to: "")) && (dr.isEqual(to: "")) && (cvd.isEqual(to: "")) && (diabetesScore.isEqual(to: "")) && (cvddr.isEqual(to: "")) && (ha.isEqual(to: "")) && (chd.isEqual(to: ""))) {
-            self.viewEmpty.isHidden = false
-            self.scrollMain.isHidden = true
+//            self.viewEmpty.isHidden = false
+//            self.scrollMain.isHidden = true
+            
+            self.viewEmpty.isHidden = true
+            self.scrollMain.isHidden = false
         }
         else {
             self.viewEmpty.isHidden = true
@@ -134,14 +143,16 @@ class StartAssessmentViewController: UIViewController {
         }
     }
     func updateValue(detailDic : NSMutableDictionary) {
-        self.labelDiabetes.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "diabetesScore")
-        self.labelBMI.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "bmi")
-        self.labelStroke.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "stroke")
-        self.labelDR.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "dr")
-        self.labelCVD.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "cvd")
-        self.labelCVDDeath.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "cvddr")
-        self.labelHA.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "ha")
-        self.labelCHD.text = AppManager.sharedInstance.checkNumberString(DetailDictionary: detailDic, key: "chd")
+        
+        
+        self.labelDiabetes.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "diabetesScore")
+        self.labelBMI.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "bmi")
+        self.labelStroke.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "stroke")
+        self.labelDR.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "dr")
+        self.labelCVD.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "cvd")
+        self.labelCVDDeath.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "cvddr")
+        self.labelHA.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "ha")
+        self.labelCHD.text = AppManager.sharedInstance.checkNumberStringForAssessment(DetailDictionary: detailDic, key: "chd")
     }
     @IBAction func startMonitoring(_ sender : Any) {
         let UserDefaultsDetails = UserDefaults.standard

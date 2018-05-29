@@ -529,8 +529,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view contentMode="scaleToFill" id="sJR-TJ-LgP">
-                            <rect key="frame" x="75" y="0.0" width="75" height="60"/>
+                        <view contentMode="scaleToFill" misplaced="YES" id="sJR-TJ-LgP">
+                            <rect key="frame" x="100" y="0.0" width="75" height="60"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assessment.png" highlightedImage="assessment_Select.png" id="6tU-h4-iPo">
@@ -558,8 +558,8 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view contentMode="scaleToFill" id="QyB-Eu-Rcg">
-                            <rect key="frame" x="150" y="0.0" width="75" height="60"/>
+                        <view contentMode="scaleToFill" misplaced="YES" id="QyB-Eu-Rcg">
+                            <rect key="frame" x="200" y="0.0" width="75" height="60"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="risk.png" highlightedImage="risk.png" highlighted="YES" id="MDQ-8K-A0Q">
@@ -587,9 +587,9 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view contentMode="scaleToFill" id="2s9-4u-hdX">
-                            <rect key="frame" x="225" y="0.0" width="75" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" misplaced="YES" id="2s9-4u-hdX">
+                            <rect key="frame" x="300" y="0.0" width="75" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="records.png" highlightedImage="records_Select.png" id="hMF-Cn-Z2P">
                                     <rect key="frame" x="28" y="11" width="20" height="20"/>
@@ -616,7 +616,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <view contentMode="scaleToFill" id="uw7-Ax-7EL">
+                        <view hidden="YES" contentMode="scaleToFill" id="uw7-Ax-7EL">
                             <rect key="frame" x="300" y="0.0" width="75" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>

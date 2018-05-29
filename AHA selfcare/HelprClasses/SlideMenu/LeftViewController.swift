@@ -14,6 +14,8 @@ enum LeftMenu: Int {
     case Setting
     case Invite
 //    case Lab
+    case TermsandPolicy
+    
     case Logout
 }
 protocol LeftMenuProtocol : class {
@@ -32,6 +34,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
             ["Title":"Settings","Icon":"settings.png"],
             ["Title":"Invite friends & family","Icon":"invite-friends.png"],
 //            ["Title":"Lab","Icon":"labs.png"],
+            ["Title":"Terms & Policy","Icon":"settings.png"],
             ["Title":"Logout","Icon":"logout.png"]
         ]
     var mainViewController: UIViewController!
@@ -40,6 +43,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     var loginViewcontroller: UIViewController!
     var devicesViewController : UIViewController!
     var labViewController : UIViewController!
+    var privacyPolicyController : UIViewController!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -77,6 +81,10 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
         
         let loginViewcontroller = SignInViewController(nibName : "SignInViewController" , bundle : nil)
         self.loginViewcontroller = UINavigationController(rootViewController: loginViewcontroller)
+        
+        let privacypolicyVC = TermsandPolicyViewController(nibName : "TermsandPolicyViewController" , bundle : nil)
+        privacypolicyVC.mainViewController = self
+        self.privacyPolicyController = UINavigationController(rootViewController: privacypolicyVC)
         
         self.tableView.registerCellClass(BaseTableViewCell.self)
     }
@@ -127,6 +135,10 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
             UserDefaults.standard.removeObject(forKey: "appVersion")
             UserDefaults.standard.synchronize()
             self.slideMenuController()?.changeMainViewController(self.loginViewcontroller, close: true)
+        case .TermsandPolicy:
+            self.slideMenuController()?.changeMainViewController(self.privacyPolicyController, close: true)
+
+     
         }
     }
 }
@@ -137,6 +149,9 @@ extension LeftViewController : UITableViewDelegate {
             switch menu {
             case .DashBoard, .Setting, .Invite, .Logout :
                 return BaseTableViewCell.height()
+            case .TermsandPolicy:
+                return BaseTableViewCell.height()
+           
             }//.Devices //.Lab,
         }
         return 0
@@ -169,7 +184,7 @@ extension LeftViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .DashBoard,.Setting,.Invite, .Logout :
+            case .DashBoard,.Setting,.Invite, .Logout,.TermsandPolicy:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.backgroundColor = UIColor.clear
                 cell.setData(menus[indexPath.row])

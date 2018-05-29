@@ -14,7 +14,8 @@ class RiskViewController: UIViewController {
 
     @IBOutlet weak var tabelRiskManagement : UITableView!
     @IBOutlet weak var viewEmpty : UIView!
-
+    var mainViewController: UIViewController!
+   
     var delegate : AnyObject?
     var arrayOfItems :NSMutableArray = []
     var arrayOfRiskItems :NSMutableArray = []
@@ -22,11 +23,9 @@ class RiskViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return.lightContent
     }
+   
     @IBAction func menuClick(_ sender : Any) {
-        if self.delegate is StartMonitoringViewController {
-            let StartMonitoringVC : StartMonitoringViewController = (self.delegate as! StartMonitoringViewController)
-            StartMonitoringVC.menuClick("")
-        }
+        self.slideMenuController()?.toggleLeft()
     }
     @IBAction func gotoMonitoring(_ sender : Any) {
         if self.delegate is StartMonitoringViewController {

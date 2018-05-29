@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		44BFE91A20B697E700FDC5C1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91920B697E700FDC5C1 /* Session.swift */; };
 		44BFE91D20B698B300FDC5C1 /* SharedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91C20B698B300FDC5C1 /* SharedObject.swift */; };
+		44DF6B0C20BD2C0D00344B05 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF6B0A20BD2C0C00344B05 /* PrivacyPolicyViewController.swift */; };
+		44DF6B0D20BD2C0D00344B05 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44DF6B0B20BD2C0C00344B05 /* PrivacyPolicyViewController.xib */; };
+		44DF6B1020BD5EE400344B05 /* TermsandPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF6B0E20BD5EE400344B05 /* TermsandPolicyViewController.swift */; };
+		44DF6B1120BD5EE400344B05 /* TermsandPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44DF6B0F20BD5EE400344B05 /* TermsandPolicyViewController.xib */; };
+		44DF6B1420BD650300344B05 /* TermsandPrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF6B1220BD650300344B05 /* TermsandPrivacyTableViewCell.swift */; };
+		44DF6B1520BD650300344B05 /* TermsandPrivacyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44DF6B1320BD650300344B05 /* TermsandPrivacyTableViewCell.xib */; };
 		44E2C4F320BC367E0009F798 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E2C4F220BC367E0009F798 /* Helper.swift */; };
 		9710918C1EBC1131001CEB3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9710918B1EBC1131001CEB3A /* AppDelegate.swift */; };
 		971091931EBC1131001CEB3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971091911EBC1131001CEB3A /* Main.storyboard */; };
@@ -346,6 +352,12 @@
 		3FB2B425919FDC38D272C29D /* Pods-AHA selfcare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHA selfcare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHA selfcare/Pods-AHA selfcare.debug.xcconfig"; sourceTree = "<group>"; };
 		44BFE91920B697E700FDC5C1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		44BFE91C20B698B300FDC5C1 /* SharedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedObject.swift; sourceTree = "<group>"; };
+		44DF6B0A20BD2C0C00344B05 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		44DF6B0B20BD2C0C00344B05 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
+		44DF6B0E20BD5EE400344B05 /* TermsandPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandPolicyViewController.swift; sourceTree = "<group>"; };
+		44DF6B0F20BD5EE400344B05 /* TermsandPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsandPolicyViewController.xib; sourceTree = "<group>"; };
+		44DF6B1220BD650300344B05 /* TermsandPrivacyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandPrivacyTableViewCell.swift; sourceTree = "<group>"; };
+		44DF6B1320BD650300344B05 /* TermsandPrivacyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsandPrivacyTableViewCell.xib; sourceTree = "<group>"; };
 		44E2C4F220BC367E0009F798 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		66CC0236953422B8E2BB619A /* Pods_AHA_selfcare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHA_selfcare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971091881EBC1131001CEB3A /* AHA selfcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AHA selfcare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -805,6 +817,19 @@
 			path = Values;
 			sourceTree = "<group>";
 		};
+		44DF6B0920BD2BE500344B05 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				44DF6B0A20BD2C0C00344B05 /* PrivacyPolicyViewController.swift */,
+				44DF6B0B20BD2C0C00344B05 /* PrivacyPolicyViewController.xib */,
+				44DF6B0E20BD5EE400344B05 /* TermsandPolicyViewController.swift */,
+				44DF6B0F20BD5EE400344B05 /* TermsandPolicyViewController.xib */,
+				44DF6B1220BD650300344B05 /* TermsandPrivacyTableViewCell.swift */,
+				44DF6B1320BD650300344B05 /* TermsandPrivacyTableViewCell.xib */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
 		9710917F1EBC1130001CEB3A = {
 			isa = PBXGroup;
 			children = (
@@ -840,6 +865,7 @@
 		9710918A1EBC1131001CEB3A /* AHA selfcare */ = {
 			isa = PBXGroup;
 			children = (
+				44DF6B0920BD2BE500344B05 /* PrivacyPolicy */,
 				44BFE91720B6979F00FDC5C1 /* Model */,
 				9710918B1EBC1131001CEB3A /* AppDelegate.swift */,
 				973E219F1EBCBCEF0079B161 /* AppManager.swift */,
@@ -1810,7 +1836,7 @@
 				TargetAttributes = {
 					971091871EBC1131001CEB3A = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = N382RHXN3K;
+						DevelopmentTeam = 7X5XQLPR38;
 						ProvisioningStyle = Manual;
 					};
 					9710919D1EBC1131001CEB3A = {
@@ -1938,6 +1964,7 @@
 				CE094BC3207FA2A300547F47 /* ReadPolicyViewController.xib in Resources */,
 				9760578F1EC21FD4008F044B /* CellAssessment.xib in Resources */,
 				97EAB15F1EC33821008B82F0 /* sleep@2x.png in Resources */,
+				44DF6B1520BD650300344B05 /* TermsandPrivacyTableViewCell.xib in Resources */,
 				971DCD7A1F32319900C15CC2 /* InviteViewController.xib in Resources */,
 				97A870F21EC8393700EACA4F /* ViewTextEditArea.xib in Resources */,
 				97EAB1741EC341AF008B82F0 /* MonitoringDetailViewController.xib in Resources */,
@@ -1970,6 +1997,7 @@
 				97EAB1491EC32CC5008B82F0 /* assessment@2x.png in Resources */,
 				9760576D1EC21743008F044B /* back@3x.png in Resources */,
 				973E216C1EBCBB720079B161 /* BackButton@3x.png in Resources */,
+				44DF6B1120BD5EE400344B05 /* TermsandPolicyViewController.xib in Resources */,
 				A69C01802069015F002717E9 /* aha_health.png in Resources */,
 				9797D17E1EF18749006A253E /* MessageViewController.xib in Resources */,
 				97EAB14E1EC32CDA008B82F0 /* shop@3x.png in Resources */,
@@ -1999,6 +2027,7 @@
 				97697BDD1ED9CCE10093D747 /* ViewAge.xib in Resources */,
 				97F716591F37320100C9A636 /* plat_female.jpg in Resources */,
 				97A015551EDAFE4E00BB164E /* ViewEditNumber.xib in Resources */,
+				44DF6B0D20BD2C0D00344B05 /* PrivacyPolicyViewController.xib in Resources */,
 				97E766471EDC6A3F00282493 /* cardiovascular@2x.png in Resources */,
 				97EAB1671EC3383F008B82F0 /* activity@2x.png in Resources */,
 				9718526D1F17D4D600C2A181 /* Default@2x.png in Resources */,
@@ -2148,9 +2177,11 @@
 				97C2C5431EED207500E6003B /* ExSlideMenuController.swift in Sources */,
 				973E217F1EBCBB720079B161 /* UIProgressView+AFNetworking.m in Sources */,
 				973E217D1EBCBB720079B161 /* UIButton+AFNetworking.m in Sources */,
+				44DF6B1420BD650300344B05 /* TermsandPrivacyTableViewCell.swift in Sources */,
 				97F716751F37362000C9A636 /* LabDetailViewController.swift in Sources */,
 				973E21801EBCBB720079B161 /* UIRefreshControl+AFNetworking.m in Sources */,
 				9766B5541EE7073500FE7D3D /* RPFloatingPlaceholderTextView.m in Sources */,
+				44DF6B0C20BD2C0D00344B05 /* PrivacyPolicyViewController.swift in Sources */,
 				973E217C1EBCBB720079B161 /* UIAlertView+AFNetworking.m in Sources */,
 				973E21771EBCBB720079B161 /* AFURLConnectionOperation.m in Sources */,
 				44BFE91A20B697E700FDC5C1 /* Session.swift in Sources */,
@@ -2235,6 +2266,7 @@
 				9718632B1ED739510054BE7D /* ViewSelectAnswers.swift in Sources */,
 				44E2C4F320BC367E0009F798 /* Helper.swift in Sources */,
 				973E21851EBCBB720079B161 /* MBProgressHUD.m in Sources */,
+				44DF6B1020BD5EE400344B05 /* TermsandPolicyViewController.swift in Sources */,
 				978BC7411ED3316100A9074C /* ViewNumber.swift in Sources */,
 				97E3192E1F06B63900E4AD9C /* EditProfileViewController.swift in Sources */,
 				973E21821EBCBB720079B161 /* HAPIOperation.m in Sources */,
@@ -2434,10 +2466,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Aha Health Ltd (N382RHXN3K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aha Health Ltd (N382RHXN3K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N382RHXN3K;
+				DEVELOPMENT_TEAM = 7X5XQLPR38;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2445,17 +2477,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AHA selfcare/AHA selfcare-PrefixHeader.pch";
 				INFOPLIST_FILE = "AHA selfcare/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ahahealth.io;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamguystech.beacontest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5856cc20-81b1-43c8-833b-a5e2506e3ae1";
-				PROVISIONING_PROFILE_SPECIFIER = AHA_Distribution;
+				PROVISIONING_PROFILE = "66bdc324-5eae-4e48-b0d6-69fccf2b8f7a";
+				PROVISIONING_PROFILE_SPECIFIER = "Beacon test Devlopment";
 				SWIFT_OBJC_BRIDGING_HEADER = "AHA selfcare/AHA selfcare-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2468,8 +2500,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Aha Health Ltd (N382RHXN3K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aha Health Ltd (N382RHXN3K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N382RHXN3K;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2479,14 +2511,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AHA selfcare/AHA selfcare-PrefixHeader.pch";
 				INFOPLIST_FILE = "AHA selfcare/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.ahahealth.io;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamguystech.beacontest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5856cc20-81b1-43c8-833b-a5e2506e3ae1";
 				PROVISIONING_PROFILE_SPECIFIER = AHA_Distribution;

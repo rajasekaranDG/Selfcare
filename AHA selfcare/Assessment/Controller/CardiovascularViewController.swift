@@ -22,6 +22,7 @@ class CardiovascularViewController: UIViewController {
 
     @IBOutlet weak var scrollMain : UIScrollView!
     @IBOutlet weak var ViewBottom : UIView!
+    @IBOutlet weak var infoView : UIView!
     @IBOutlet weak var lableLine : UILabel!
     @IBOutlet weak var ViewInner : UIView!
     @IBOutlet weak var lableEmpty : UILabel!
@@ -79,6 +80,7 @@ class CardiovascularViewController: UIViewController {
         self.navigationController!.popViewController(animated: true)
     }
     @IBAction func resultClick(_ sender: Any) {
+        
         self.imageResult.isHighlighted = true
         self.imageQuestions.isHighlighted = false
         
@@ -93,7 +95,8 @@ class CardiovascularViewController: UIViewController {
             self.lableLine.setX(self.viewResult.minx() + 10)
         }, completion: {(finished: Bool) -> Void in
         })
-        self.monthlyClick("")
+//        self.monthlyClick("")
+        self.weeklyClick("")
     }
     @IBAction func questionsClick(_ sender: Any) {
         self.imageResult.isHighlighted = false
@@ -175,6 +178,7 @@ class CardiovascularViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.infoView.isHidden = true
         AppManager.sharedInstance.viewShadow(MainView: self.ViewBottom)
         AppManager.sharedInstance.viewShadow(MainView: self.viewCHDValue)
         AppManager.sharedInstance.viewShadow(MainView: self.viewCHDDeath)
@@ -185,7 +189,7 @@ class CardiovascularViewController: UIViewController {
 
         self.lableLine.setWidth(self.viewResult.width())
         self.lableLine.setX(0)
-        self.dailyClick("")
+        self.weeklyClick("")
     }
     func fetchResultDetail () {
         
@@ -209,6 +213,7 @@ class CardiovascularViewController: UIViewController {
                     if(self.arrayOfItems.count != 0){
                         self.ViewInner.setHeight(960)
                         self.lableEmpty.isHidden = true
+                        self.infoView.isHidden = false
                         self.viewScore.isHidden = false
                         self.updateValue()
                         self.scrollMain.contentSize = CGSize(width: self.view.width(), height: 960)
@@ -287,6 +292,7 @@ class CardiovascularViewController: UIViewController {
                         self.ViewInner.setHeight(550)
                         self.viewScore.isHidden = true
                         self.lableEmpty.isHidden = false
+                         self.infoView.isHidden = true
                         self.scrollMain.contentSize = CGSize(width: self.view.width(), height: 550)
                     }
                 } catch let error {

@@ -334,8 +334,13 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     // MARK:- Button Action
     @IBAction func didTapOnReadPolicy(_ sender: UIButton) {
         
-        let SignupVC : ReadPolicyViewController = ReadPolicyViewController(nibName : "ReadPolicyViewController" , bundle : nil)
-        self.navigationController?.pushViewController(SignupVC, animated: true)
+//        let SignupVC : ReadPolicyViewController = ReadPolicyViewController(nibName : "ReadPolicyViewController" , bundle : nil)
+//        self.navigationController?.pushViewController(SignupVC, animated: true)
+        
+        let privacypolicyVC = PrivacyPolicyViewController(nibName : "PrivacyPolicyViewController" , bundle : nil)
+        privacypolicyVC.urlString = "http://ahahealth.io/terms-and-conditions/"
+        privacypolicyVC.titleString = "Terms and Conditions"
+        self.navigationController?.pushViewController(privacypolicyVC, animated: true)
     }
      @IBAction func btnTermsandConditionTapped(_ sender: UIButton) {
         
