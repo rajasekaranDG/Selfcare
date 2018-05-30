@@ -1836,7 +1836,7 @@
 				TargetAttributes = {
 					971091871EBC1131001CEB3A = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 7X5XQLPR38;
+						DevelopmentTeam = N382RHXN3K;
 						ProvisioningStyle = Manual;
 					};
 					9710919D1EBC1131001CEB3A = {
@@ -2466,42 +2466,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7X5XQLPR38;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AHA selfcare/AHA selfcare-PrefixHeader.pch";
-				INFOPLIST_FILE = "AHA selfcare/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
-					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamguystech.beacontest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66bdc324-5eae-4e48-b0d6-69fccf2b8f7a";
-				PROVISIONING_PROFILE_SPECIFIER = "Beacon test Devlopment";
-				SWIFT_OBJC_BRIDGING_HEADER = "AHA selfcare/AHA selfcare-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		971091B41EBC1131001CEB3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE2C974217710CF703DD128A /* Pods-AHA selfcare.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Leo Chelliah (2XVYK26H58)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hariharan Ponniah (VEN6664G6B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hariharan Ponniah (VEN6664G6B)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N382RHXN3K;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2518,7 +2484,41 @@
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamguystech.beacontest;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ahahealth.io;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16e1db9a-0efb-4557-86a9-86251e08460a";
+				PROVISIONING_PROFILE_SPECIFIER = AHA_Development;
+				SWIFT_OBJC_BRIDGING_HEADER = "AHA selfcare/AHA selfcare-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		971091B41EBC1131001CEB3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE2C974217710CF703DD128A /* Pods-AHA selfcare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hariharan Ponniah (VEN6664G6B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hariharan Ponniah (VEN6664G6B)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = J8462FXBV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AHA selfcare/AHA selfcare-PrefixHeader.pch";
+				INFOPLIST_FILE = "AHA selfcare/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
+					"$(PROJECT_DIR)/AHA\\ selfcare/HelprClasses/ObjectiveCClasse/WJLinesChartLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ahahealth.io;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5856cc20-81b1-43c8-833b-a5e2506e3ae1";
 				PROVISIONING_PROFILE_SPECIFIER = AHA_Distribution;

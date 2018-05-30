@@ -345,28 +345,28 @@ class CardiovascularViewController: UIViewController {
             let lineChart1 = YZLineChartModel()
             lineChart1.title = "cvd"
             lineChart1.data = self.cvdArray as! [Any]
-            lineChart1.lineColor = UIColor(red: 237.0/255, green: 87.0/255, blue: 87.0/255, alpha: CGFloat(1.0))
+            lineChart1.lineColor = UIColor(red: 2.0/255, green: 208.0/255, blue: 42.0/255, alpha: CGFloat(1.0))
             lineArray.add(lineChart1)
         }
         if(self.drArray.count != 0){
             let lineChart2 = YZLineChartModel()
             lineChart2.title = "heart attack risk"
             lineChart2.data = self.drArray as! [Any]
-            lineChart2.lineColor = UIColor(red: 217.0/255, green: 174.0/255, blue: 174.0/255, alpha: CGFloat(1))
+            lineChart2.lineColor = UIColor(red: 228.0/255, green: 221.0/255, blue: 1.0/255, alpha: CGFloat(1))
             lineArray.add(lineChart2)
         }
         if(self.chdArray.count != 0){
             let lineChart3 = YZLineChartModel()
             lineChart3.title = "chd"
             lineChart3.data = self.chdArray as! [Any]
-            lineChart3.lineColor = UIColor(red: 106.0/255, green: 120.0/255, blue: 201.0/255, alpha: CGFloat(1))
+            lineChart3.lineColor = UIColor(red: 7.0/255, green: 2.0/255, blue: 208.0/255, alpha: CGFloat(1))
             lineArray.add(lineChart3)
         }
         if(self.strokeArray.count != 0){
             let lineChart4 = YZLineChartModel()
-            lineChart4.title = "stock risk"
+            lineChart4.title = "stroke risk"
             lineChart4.data = self.strokeArray as! [Any]
-            lineChart4.lineColor = UIColor(red: 7.0/255, green: 2.0/255, blue: 208.0/255, alpha: CGFloat(1))
+            lineChart4.lineColor = UIColor(red: 255.0/255, green: 128.0/255, blue: 0.0/255, alpha: CGFloat(1))
             lineArray.add(lineChart4)
         }
         if(self.haArray.count != 0){
@@ -380,7 +380,7 @@ class CardiovascularViewController: UIViewController {
             let lineChart6 = YZLineChartModel()
             lineChart6.title = "CVD Death"
             lineChart6.data = self.cvddrArray as! [Any]
-            lineChart6.lineColor = UIColor(red: 146.0/255, green: 144.0/255, blue: 144.0/255, alpha: CGFloat(1))
+            lineChart6.lineColor = UIColor(red: 255.0/255, green: 0.0/255, blue: 18.0/255, alpha: CGFloat(1))
             lineArray.add(lineChart6)
         }
         if(lineArray.count != 0){

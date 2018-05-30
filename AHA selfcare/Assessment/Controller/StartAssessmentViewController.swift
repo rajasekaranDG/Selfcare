@@ -45,9 +45,7 @@ class StartAssessmentViewController: UIViewController {
             StartMonitoringVC.menuClick("")
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if ((AppManager.sharedInstance.appVersion() == "PREMIUM") || (AppManager.sharedInstance.appVersion() == "SUBSCRIBED")){

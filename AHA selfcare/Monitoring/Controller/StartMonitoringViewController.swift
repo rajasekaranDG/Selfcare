@@ -337,9 +337,6 @@ class StartMonitoringViewController: UIViewController {
        // self.tableMonitoring.addSubview(self.refreshControl)
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
     func updateMonitoringView() {
         if(AppManager.sharedInstance.MonitoringStartFlag() == ""){
             self.viewStartMonitoring.isHidden = false
@@ -429,6 +426,9 @@ class StartMonitoringViewController: UIViewController {
                     self.viewEmpty.isHidden = true
                     self.scrollMain.isHidden = false
                     self.updateValue(detailDic: dictionaryDetails)
+//                    if jsonObject["consumerMessage"] == "Not authorized" {
+//                        self .showAlert(message: "Please logout and Login again")
+//                    }
                 }
             } catch let error {
                 print(error)
@@ -607,6 +607,17 @@ class StartMonitoringViewController: UIViewController {
         self .fetchSummaryDetail()
     }
     
+    func showAlert(message: String) {
+        
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
