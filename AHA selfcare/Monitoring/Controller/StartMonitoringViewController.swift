@@ -337,6 +337,9 @@ class StartMonitoringViewController: UIViewController {
        // self.tableMonitoring.addSubview(self.refreshControl)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     func updateMonitoringView() {
         if(AppManager.sharedInstance.MonitoringStartFlag() == ""){
             self.viewStartMonitoring.isHidden = false

@@ -342,6 +342,7 @@ class AppManager: NSObject {
     //Mark: Check Number String For Assessment
     func checkNumberStringForAssessment(DetailDictionary : NSMutableDictionary, key KeyValue:String) -> String {
         var Assigned : NSString = ""
+        if DetailDictionary.count > 0 {
         if ((DetailDictionary[KeyValue] as! NSObject != NSNull()) && (DetailDictionary[KeyValue] != nil)) {
             if let str = DetailDictionary[KeyValue] as? NSNumber {
                 var roundOffValue = Int(str)//str.stringValue as NSString
@@ -353,6 +354,7 @@ class AppManager: NSObject {
                     Assigned = "0.0"
                 }
             }
+        }
         }
         return Assigned as String
     }

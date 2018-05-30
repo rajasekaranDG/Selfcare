@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssessmentViewController: UIViewController {
+class AssessmentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var delegate : AnyObject?
     var assessmentArray = [[String: String]]()
@@ -26,6 +26,10 @@ class AssessmentViewController: UIViewController {
             StartMonitoringVC.menuClick("")
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     func goMonitoringHome() {
         if self.delegate is StartMonitoringViewController {
             let StartMonitoringVC : StartMonitoringViewController = (self.delegate as! StartMonitoringViewController)
@@ -42,18 +46,21 @@ class AssessmentViewController: UIViewController {
                                 ["Image": "cardiovascular.png", "Title": "Cardiovascular"],
 //                                ["Image": "caregiver.png", "Title": "CareGiver"],
                                 ["Image": "diabetes.png", "Title": "Diabetes"]]
+        self.tableAssessment.delegate = self
+        self.tableAssessment.dataSource = self
         self.tableAssessment.reloadData()
     }
-    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.assessmentArray.count
+         return self.assessmentArray.count
     }
     func tableView(_ tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150;
     }
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellAssessmentID", for: indexPath as IndexPath) as! CellAssessment
         cell.selectionStyle = .none
         
@@ -81,7 +88,7 @@ class AssessmentViewController: UIViewController {
 
                 let StartObesityVC : ObesityStartViewController = ObesityStartViewController(nibName : "ObesityStartViewController" , bundle : nil)
                 StartObesityVC.delegate = self
-                self.navigationController?.pushViewController(StartObesityVC, animated: true)
+                self.delegate?.navigationController??.pushViewController(StartObesityVC, animated: true)
             }
             else {
                 let ObesityVC : ObesityViewController = ObesityViewController(nibName : "ObesityViewController" , bundle : nil)

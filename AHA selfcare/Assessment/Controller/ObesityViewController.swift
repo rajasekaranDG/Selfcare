@@ -140,8 +140,7 @@ class ObesityViewController: UIViewController {
             self.lableLine.setX(self.viewResult.minx() + 10)
         }, completion: {(finished: Bool) -> Void in
         })
-//        self.monthlyClick("")
-        self .weeklyClick("")
+        self.monthlyClick("")
     }
     @IBAction func questionsClick(_ sender: Any) {
         self.imageResult.isHighlighted = false
@@ -171,8 +170,7 @@ class ObesityViewController: UIViewController {
         AppManager.sharedInstance.viewShadow(MainView: self.ViewMain)
         self.lableLine.setWidth(self.viewResult.width())
         self.lableLine.setX(0)
-//        self.monthlyClick("")
-        self .weeklyClick("")
+        self.monthlyClick("")
     }
     func fetchResultDetail () {
         
@@ -206,7 +204,7 @@ class ObesityViewController: UIViewController {
                             
                             if(score < 18.5) {
                                 self.labelScoreMessage.text = "You are Underweight – ideally aim for a BMI of between 18.5 and 25."
-                                self.viewScoreInner.backgroundColor = UIColor.green
+                                self.viewScoreInner.backgroundColor = HELPER.hexStringToUIColor(hex: "02D02A")//UIColor.green
                             }
                             if((score >= 18.5) && (score <= 24.9)){
                                 self.labelScoreMessage.text = "Your are of Normal weight – Very Good. Always aim for a BMI of between 18.5 and 25."
@@ -267,7 +265,7 @@ class ObesityViewController: UIViewController {
             let lineChart1 = YZLineChartModel()
             lineChart1.title = "BMI"
             lineChart1.data = arraySystolicNumber as! [Any]
-            lineChart1.lineColor = UIColor(red: 231.0/255, green: 122.0/255, blue: 4.0/255, alpha: CGFloat(1))
+            lineChart1.lineColor = HELPER.hexStringToUIColor(hex: "02D02A")//UIColor(red: 231.0/255, green: 122.0/255, blue: 4.0/255, alpha: CGFloat(1))
             lineArray.add(lineChart1)
             self.lineChartView.reDrawLineChart(withDimensionData: array as! [Any], chartData: lineArray as! [Any])
         }

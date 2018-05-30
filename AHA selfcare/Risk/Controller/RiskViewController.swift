@@ -24,8 +24,12 @@ class RiskViewController: UIViewController {
         return.lightContent
     }
    
-    @IBAction func menuClick(_ sender : Any) {
-        self.slideMenuController()?.toggleLeft()
+    @IBAction func MenuClick(_ sender : Any) {
+       
+        if self.delegate is StartMonitoringViewController {
+            let StartMonitoringVC : StartMonitoringViewController = (self.delegate as! StartMonitoringViewController)
+            StartMonitoringVC.menuClick("")
+        }
     }
     @IBAction func gotoMonitoring(_ sender : Any) {
         if self.delegate is StartMonitoringViewController {

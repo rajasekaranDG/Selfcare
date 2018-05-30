@@ -95,8 +95,7 @@ class CardiovascularViewController: UIViewController {
             self.lableLine.setX(self.viewResult.minx() + 10)
         }, completion: {(finished: Bool) -> Void in
         })
-//        self.monthlyClick("")
-        self.weeklyClick("")
+        self.monthlyClick("")
     }
     @IBAction func questionsClick(_ sender: Any) {
         self.imageResult.isHighlighted = false
@@ -189,7 +188,7 @@ class CardiovascularViewController: UIViewController {
 
         self.lableLine.setWidth(self.viewResult.width())
         self.lableLine.setX(0)
-        self.weeklyClick("")
+        self.monthlyClick("")
     }
     func fetchResultDetail () {
         
@@ -205,10 +204,13 @@ class CardiovascularViewController: UIViewController {
                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
                     let jsonObject = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers) as! NSDictionary
                     print(jsonObject)
-                    let userArray : NSArray = jsonObject["data"] as! NSArray
-                    for DetailDic in userArray {
-                        let dictionaryDetails: NSMutableDictionary = AppManager.sharedInstance.checkNullValue(DetailDictionary: DetailDic as! [NSObject : AnyObject] as NSDictionary)
-                        self.arrayOfItems.add(dictionaryDetails)
+                    
+                    if let arr = jsonObject["data"] as? NSArray {
+                        let userArray : NSArray = arr
+                        for DetailDic in userArray {
+                            let dictionaryDetails: NSMutableDictionary = AppManager.sharedInstance.checkNullValue(DetailDictionary: DetailDic as! [NSObject : AnyObject] as NSDictionary)
+                            self.arrayOfItems.add(dictionaryDetails)
+                        }
                     }
                     if(self.arrayOfItems.count != 0){
                         self.ViewInner.setHeight(960)

@@ -59,7 +59,7 @@
                                 <color key="titleColor" red="0.35294117650000001" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="menuClick:" destination="-1" eventType="touchUpInside" id="sJt-6d-C3a"/>
+                                <action selector="MenuClick:" destination="-1" eventType="touchUpInside" id="1X5-XY-auQ"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="aha_health.png" id="3AM-lq-2d4">

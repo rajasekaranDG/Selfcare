@@ -87,6 +87,7 @@
                 <constraint firstItem="IbG-U1-9zb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="vjw-St-nsq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="32.5" y="86.5"/>
         </view>
     </objects>
     <resources>

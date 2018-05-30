@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssessmentViewController" customModule="AHA_selfcare" customModuleProvider="target">
             <connections>
-                <outlet property="tableAssessment" destination="fmH-77-PSU" id="r7j-v3-KKn"/>
+                <outlet property="tableAssessment" destination="fmH-77-PSU" id="AL9-xf-wBm"/>
                 <outlet property="view" destination="sDr-lC-QVk" id="dEq-Xv-NuO"/>
             </connections>
         </placeholder>
@@ -66,10 +66,6 @@
                     <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="o28-yi-ZYC"/>
-                        <outlet property="delegate" destination="-1" id="7K1-Fd-MLg"/>
-                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -22,8 +22,12 @@ class RecordsViewController: UIViewController {
 
     //MARK:- Button Actions
     
-    @IBAction func menuClick(_ sender : Any) {
-        self.slideMenuController()?.toggleLeft()
+    @IBAction func MenuClick(_ sender : Any) {
+       
+        if self.delegate is StartMonitoringViewController {
+            let StartMonitoringVC : StartMonitoringViewController = (self.delegate as! StartMonitoringViewController)
+            StartMonitoringVC.menuClick("")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

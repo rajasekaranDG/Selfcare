@@ -34,7 +34,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
             ["Title":"Settings","Icon":"settings.png"],
             ["Title":"Invite friends & family","Icon":"invite-friends.png"],
 //            ["Title":"Lab","Icon":"labs.png"],
-            ["Title":"Terms & Policy","Icon":"settings.png"],
+            ["Title":"Terms & Policy","Icon":"questionarrie.png"],
             ["Title":"Logout","Icon":"logout.png"]
         ]
     var mainViewController: UIViewController!

@@ -12,6 +12,7 @@ import Alamofire
 class StartAssessmentViewController: UIViewController {
 
     var delegate : AnyObject?
+    var assessmentVC : AssessmentViewController!
     
     @IBOutlet weak var scrollMain : UIScrollView!
     @IBOutlet weak var viewEmpty : UIView!
@@ -44,11 +45,15 @@ class StartAssessmentViewController: UIViewController {
             StartMonitoringVC.menuClick("")
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if ((AppManager.sharedInstance.appVersion() == "PREMIUM") || (AppManager.sharedInstance.appVersion() == "SUBSCRIBED")){
             
         }
+        
 //        else {
 //            let viewInvite: ViewInvite = (Bundle .main.loadNibNamed("ViewInvite", owner: self, options: nil)![0] as! ViewInvite)
 //            viewInvite.frame = CGRect(x: 0, y: 64, width: self.view.width(), height: self.view.height())
@@ -158,11 +163,16 @@ class StartAssessmentViewController: UIViewController {
         let UserDefaultsDetails = UserDefaults.standard
         UserDefaultsDetails.setValue("Y" , forKey: "assessmentStartFlag")
         UserDefaultsDetails.synchronize()
-        let assessmentVC : AssessmentViewController = AssessmentViewController(nibName : "AssessmentViewController", bundle : nil)
-        assessmentVC.delegate = self.delegate
-        assessmentVC.view.frame = self.view.bounds
-        self.view.addSubview(assessmentVC.view)
+//        let assessmentVC : AssessmentViewController = AssessmentViewController(nibName : "AssessmentViewController", bundle : nil)
+//        assessmentVC.delegate = self.delegate
+//        assessmentVC.view.frame = self.view.bounds
+//        self.view.addSubview(assessmentVC.view)
         
+        let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
+        self.assessmentVC = AssessmentViewController(nibName : "AssessmentViewController" , bundle : nil)
+        self.assessmentVC.delegate = self.delegate
+        self.assessmentVC.view.frame = CGRect(x: 0, y: 0, width: PageWidth, height: self.view.height() - 20)
+        self.view.addSubview(self.assessmentVC.view)
 //        if self.delegate is StartMonitoringViewController {
 //            let StartMonitoringVC : StartMonitoringViewController = (self.delegate as! StartMonitoringViewController)
 //            let assessmentVC : AssessmentViewController = AssessmentViewController(nibName : "AssessmentViewController", bundle : nil)
