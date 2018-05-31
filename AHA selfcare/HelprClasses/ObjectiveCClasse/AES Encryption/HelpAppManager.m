@@ -314,11 +314,17 @@
             
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Medication Time",@"Title",@"Dialog_single",@"Type",@"Medication Time",@"Hint",@"0",@"RequiredFlag",@"",@"Answer",@"medicationTime",@"addParams", nil],
             
-            [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Measurement Date*",@"Title",@"Date",@"Type",@"Measurement Date",@"Hint",@"1",@"RequiredFlag",@"",@"Answer",@"measurementDate",@"addParams", nil],
+           
             
             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Blood Glucose Unit",@"Title",@"Dialog_single",@"Type",@"Blood Glucose Unit",@"Hint",@"0",@"RequiredFlag",@"mmol/L",@"Answer",@"bloodGlucoseUnit",@"addParams", nil],
-
+            
+             [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Measurement Date*",@"Title",@"Date",@"Type",@"Measurement Date",@"Hint",@"1",@"RequiredFlag",@"",@"Answer",@"measurementDate",@"addParams", nil],
+            [NSMutableDictionary dictionaryWithObjectsAndKeys:@"",@"InfoMessage",@"N",@"Alert",@"Notes",@"Title",@"TextArea",@"Type",@"Notes",@"Hint",@"0",@"RequiredFlag",@"",@"Answer",@"note",@"addParams", nil],
             nil];
+
+//            nil];
+    
+    
 }
 -(NSMutableArray *)InsertWeigtDictionary {
     

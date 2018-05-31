@@ -41,12 +41,12 @@ class ViewTextEdit: UIView,UITextFieldDelegate {
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Prevent crashing undo bug – see note below.
-        if range.length + range.location > (textField.text?.characters.count)! {
+        if range.length + range.location > (textField.text?.count)! {
             return false
         }
         var Message : NSString = ""
-        let newLength: Int = (textField.text?.characters.count)! + string.characters.count - range.length
-        if (newLength == 1) && (newLength < (self.TxtMessage.text?.characters.count)!) {
+        let newLength: Int = (textField.text?.count)! + string.count - range.length
+        if (newLength == 1) && (newLength < (self.TxtMessage.text?.count)!) {
             Message = HelpAppManager.shared().subStringMessage(self.TxtMessage.text!) as NSString
         }
         else if(newLength > 0){

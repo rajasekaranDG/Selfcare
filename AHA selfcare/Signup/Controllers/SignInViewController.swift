@@ -66,7 +66,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         self.lblErrorPassword.isHidden = true
 
         self.textUserName.delegate = self
-        self.textUserName.placeholder = "User name"
+        self.textUserName.placeholder = "Username"
         self.textUserName.floatingLabelActiveTextColor = UIColor(red: 42.0/255, green: 180.0/255, blue: 185.0/255, alpha: 1.0)
         self.textUserName.floatingLabelInactiveTextColor = UIColor.gray
 

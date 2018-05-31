@@ -81,7 +81,13 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, MFMai
         else if self.isEmptyTextField(self.textEmailId.text!) {
             self.lblLineEmail.backgroundColor = UIColor.red
             self.lblErrorEmail.isHidden = false
+            self.lblErrorEmail.text = "Enter email id"
             return
+        }
+        if !self.isValidEmail(self.textEmailId.text!) {
+            self.lblLineEmail.backgroundColor = UIColor.red
+            self.lblErrorEmail.isHidden = false
+            self.lblErrorEmail.text = "Enter valid email id"
         }
         else {
             let mailComposeViewController = configuredMailComposeViewController()
@@ -108,6 +114,11 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, MFMai
         sendMailErrorAlert.show()
     }
 
+    func isValidEmail(_ checkString: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: checkString)
+    }
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)

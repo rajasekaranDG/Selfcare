@@ -15,10 +15,10 @@ class SelectHomeCountryViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var myBtnSave: UIButton!
     @IBOutlet weak var myTxtFldHomeCountry: UITextField!
-    
+     @IBOutlet weak var myBtnBack: UIButton!
     
     let dropDown = DropDown()
-    
+    var isFromProfile = false
     let UserDefaultsDetails = UserDefaults.standard
     var myAryCountryInfo = [[String:Any]]()
     var myFilteredArrayDropDownInfo = [String]()
@@ -40,6 +40,10 @@ class SelectHomeCountryViewController: UIViewController, UITextFieldDelegate {
     //MARK: - View Initialize
     func setUPUi() {
         
+         self.myBtnBack.isHidden = true
+        if isFromProfile == true {
+            self.myBtnBack.isHidden = false
+        }
         self.setRoundCornerView(aView:myBtnSave , borderRadius: 5.0)
         myTxtFldHomeCountry.text = UserDefaultsDetails.value(forKey: kCountryName) as? String
     }

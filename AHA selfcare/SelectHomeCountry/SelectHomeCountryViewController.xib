@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectHomeCountryViewController" customModule="AHA_selfcare" customModuleProvider="target">
             <connections>
+                <outlet property="myBtnBack" destination="n8r-RZ-8Yw" id="gkQ-i7-FDL"/>
                 <outlet property="myBtnSave" destination="nFO-OA-whG" id="9dZ-cQ-Ymf"/>
                 <outlet property="myTxtFldHomeCountry" destination="m4L-Yb-pnH" id="tNj-eI-2A8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -56,10 +57,6 @@
                                 <action selector="backClick:" destination="-1" eventType="touchUpInside" id="NMw-PU-xa5"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aha_health.png" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-VG-zMm">
-                            <rect key="frame" x="315" y="20" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

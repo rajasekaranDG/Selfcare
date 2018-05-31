@@ -351,7 +351,7 @@ class AppManager: NSObject {
             else {
                 Assigned = NSString(format:"%@", DetailDictionary[KeyValue] as! String)
                 if Assigned == "" {
-                    Assigned = "0.0"
+                    Assigned = "0"
                 }
             }
         }

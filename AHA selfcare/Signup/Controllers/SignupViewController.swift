@@ -60,6 +60,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+        
         if range.length + range.location > textField.text!.characters.count {
             return false
         }
@@ -87,18 +90,22 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             else {
                 self.lblErrorPhone.isHidden = false
             }
+            let maxLength = 16
+            return txtAfterUpdate.count <= maxLength
         }
         else if(textField == self.textName){
-            let newLength = textField.text!.characters.count + string.characters.count - range.length
+            let newLength = textField.text!.count + string.count - range.length
             if(newLength > 0){
                 self.lblErrorUsername.isHidden = true
             }
             else {
                 self.lblErrorUsername.isHidden = false
             }
+            let maxLength = 24
+            return txtAfterUpdate.count <= maxLength
         }
         else if(textField == self.textEmail){
-            let newLength = textField.text!.characters.count + string.characters.count - range.length
+            let newLength = textField.text!.count + string.count - range.length
             if(newLength > 0){
                 self.lblErrorEmail.isHidden = true
             }
@@ -107,7 +114,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             }
         }
         else if(textField == self.textPassword){
-            let newLength = textField.text!.characters.count + string.characters.count - range.length
+            let newLength = textField.text!.count + string.characters.count - range.length
             if(newLength > 0){
                 self.lblErrorPassword.isHidden = true
             }
@@ -205,13 +212,28 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             self.lblLineUsername.backgroundColor = UIColor.red
             self.lblErrorUsername.isHidden = false
         }
+        if self.isEmptyTextField(self.textEmail.text!) {
+            self.lblErrorEmail.backgroundColor = UIColor.red
+            self.lblErrorEmail.isHidden = false
+            self.lblErrorEmail.text = "Enter email id"
+            return
+        }
         if !self.isValidEmail(self.textEmail.text!) {
             self.lblLineEmail.backgroundColor = UIColor.red
             self.lblErrorEmail.isHidden = false
+            self.lblErrorEmail.text = "Enter valid email id"
+            return
         }
         if self.isEmptyTextField(self.textPassword.text!) {
             self.lblLinePassword.backgroundColor = UIColor.red
             self.lblErrorPassword.isHidden = false
+            self.lblErrorPassword.text = "Enter Password"
+        }
+        if (self.textPassword.text?.count)! < 6 {
+            self.lblLinePassword.backgroundColor = UIColor.red
+            self.lblErrorPassword.isHidden = false
+            self.lblErrorPassword.text = "Enter minimum 6 characters"
+            return
         }
         if self.isEmptyTextField(self.textPhoneNumber.text!) {
             self.lblLinePhone.backgroundColor = UIColor.red
@@ -223,7 +245,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         }
         if(!(self.isEmptyTextField(self.textName.text!)) && (self.isValidEmail(self.textEmail.text!)) && !(self.isEmptyTextField(self.textPassword.text!)) && !(self.isEmptyTextField(self.textPhoneNumber.text!)) && !(self.isEmptyTextField(self.lableDateOfBirth.text!)) && (self.lableDateOfBirth.text != "Enter Your Date Of Birth")) && isAgreeTerms != false {
 
-            let Parsedictionary: NSMutableDictionary = ["_id": self.textName.text!,
+            let uname = self.textName.text!.lowercased()
+            let Parsedictionary: NSMutableDictionary = ["_id": uname,
                                                         "email": self.textEmail.text!,
                                                         "password": self.textPassword.text!,
                                                         "mobile": self.textPhoneNumber.text!,

@@ -105,6 +105,8 @@ class MonitoringDetailViewController: UIViewController {
         self.navigationController!.popViewController(animated: true)
     }
     @IBAction func SummaryClick(_ sender: Any) {
+        
+         if self.imageSummary.isHighlighted == false {
         self.imageSummary.isHighlighted = true
         self.imageHistory.isHighlighted = false
         self.imageAddData.isHighlighted = false
@@ -126,8 +128,11 @@ class MonitoringDetailViewController: UIViewController {
         }
         //self.monthlyClick("")
         self .weeklyClick("")
+        }
     }
     @IBAction func HistoryClick(_ sender: Any) {
+        
+         if self.imageHistory.isHighlighted == false {
         self.imageSummary.isHighlighted = false
         self.imageHistory.isHighlighted = true
         self.imageAddData.isHighlighted = false
@@ -151,8 +156,11 @@ class MonitoringDetailViewController: UIViewController {
         self.historyVC.view.frame = CGRect(x: 0, y: 0, width: PageWidth, height: self.view.height() - 60)
         self.view.addSubview(self.historyVC.view)
         self.view.bringSubview(toFront: self.ViewBottom)
+        }
     }
     @IBAction func AddDataClick(_ sender: Any) {
+        
+        if self.imageAddData.isHighlighted == false {
         self.imageSummary.isHighlighted = false
         self.imageHistory.isHighlighted = false
         self.imageAddData.isHighlighted = true
@@ -177,6 +185,7 @@ class MonitoringDetailViewController: UIViewController {
         self.AddDataVC.view.frame = CGRect(x: 0, y: 0, width: PageWidth, height: self.view.height() - 60)
         self.view.addSubview(self.AddDataVC.view)
         self.view.bringSubview(toFront: self.ViewBottom)
+        }
         
     }
     // Data Generation

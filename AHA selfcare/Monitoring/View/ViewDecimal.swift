@@ -57,10 +57,10 @@ class ViewDecimal: UIView,UITextFieldDelegate {
             self.buttonPrevious.isHidden = false
         }
         if(self.currentPage == (self.totalPage)) {
-            self.buttonNext.setTitle("Confirm" as String,for: .normal)
+            self.buttonNext.setTitle("CONFIRM" as String,for: .normal)
         }
         else {
-            self.buttonNext.setTitle("Next" as String,for: .normal)
+            self.buttonNext.setTitle("NEXT" as String,for: .normal)
         }
         self.TxtMessage.delegate = self
     }

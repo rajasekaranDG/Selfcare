@@ -99,6 +99,7 @@ class ProfileViewController: UIViewController {
     @IBAction func myBtnChangeCountryAction(_ sender: Any) {
         
         let aViewController : SelectHomeCountryViewController = SelectHomeCountryViewController(nibName: "SelectHomeCountryViewController", bundle : nil)
+        aViewController.isFromProfile = true
         self.navigationController?.pushViewController(aViewController, animated: true)
         
     }

@@ -10,10 +10,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class UpdateUserInfoViewController: UIViewController {
+var NAMELIMIT = 24
+var HEIGHTLIMIT = 6
+var POSTAlCODELIMIT = 10
+
+class UpdateUserInfoViewController: UIViewController,UITextFieldDelegate {
 
     var delegate : AnyObject?
     var genderString : NSString = ""
+    
     
     @IBOutlet weak var scrollViewMain : TPKeyboardAvoidingScrollView!
     
@@ -71,11 +76,35 @@ class UpdateUserInfoViewController: UIViewController {
     }
     // MARK: - UITextFieldDelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
         
-        if range.length + range.location > textField.text!.characters.count {
+        
+        
+        if textField == textFirstName {
+            let maxLength = NAMELIMIT
+            return txtAfterUpdate.count <= maxLength
+        }
+        else if textField == textLastName {
+            let maxLength = NAMELIMIT
+            return txtAfterUpdate.count <= maxLength
+        }
+        else if textField == textHeigth {
+            let maxLength = HEIGHTLIMIT
+            return txtAfterUpdate.count <= maxLength
+        }
+        else if textField == textWeight {
+            let maxLength = HEIGHTLIMIT
+            return txtAfterUpdate.count <= maxLength
+        }
+        else if textField == textPincode {
+            let maxLength = POSTAlCODELIMIT
+            return txtAfterUpdate.count <= maxLength
+        }
+        if range.length + range.location > textField.text!.count {
             return false
         }
-        
         return true
     }
     override func viewWillAppear(_ animated: Bool) {

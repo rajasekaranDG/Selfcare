@@ -12,6 +12,8 @@ class CellHistory: UITableViewCell {
 
     @IBOutlet weak var lableDot : UILabel!
     @IBOutlet weak var lableDate : UILabel!
+    @IBOutlet weak var lableTime : UILabel!
+
     @IBOutlet weak var viewDate : UIView!
     @IBOutlet weak var viewMessage : UIView!
     @IBOutlet weak var lableMessage : UILabel!

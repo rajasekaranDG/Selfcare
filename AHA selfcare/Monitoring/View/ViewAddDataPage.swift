@@ -148,10 +148,10 @@ class ViewAddDataPage: UIView {
             viewButton.buttonPrevious.isHidden = false
         }
         if(self.currentPage == (self.totalPage-1)) {
-            viewButton.buttonNext.setTitle("Confirm" as String,for: .normal)
+            viewButton.buttonNext.setTitle("CONFIRM" as String,for: .normal)
         }
         else {
-            viewButton.buttonNext.setTitle("Next" as String,for: .normal)
+            viewButton.buttonNext.setTitle("NEXT" as String,for: .normal)
         }
     }
     func nextPage(sender: UIButton){

@@ -49,6 +49,8 @@ class HistoryViewController: UIViewController {
     }
     func fetchHistoryList () {
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+
         let address = String(format: "%@monitoring/%@/%@?startDate=%@&endDate=%@",kAPIDOMAIN,self.setUrl(),AppManager.sharedInstance.userName(),self.startDate,self.endDate) as String
 
         let escapedString = address.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
@@ -56,6 +58,8 @@ class HistoryViewController: UIViewController {
         Alamofire.request(escapedString!)
             .authenticate(user: AppManager.sharedInstance.userName(),password: AppManager.sharedInstance.userPassword())
             .responseJSON { response in
+                
+                 MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
                 
                 if(self.refreshControl.isRefreshing == true ) {
                     self.refreshControl.endRefreshing()
@@ -178,7 +182,15 @@ class HistoryViewController: UIViewController {
         let DictionaryDetail = array[indexPath.row] as! JSON
 
         AppManager.sharedInstance.viewShadow(MainView: cell.viewMessage)
-        cell.lableDate.text = DetailDic[self.setKeyName()] as? String
+        let dateandTime = DetailDic[self.setKeyName()] as? String
+        let splitArr = dateandTime?.components(separatedBy: " ")
+        if splitArr?.count == 2 {
+        cell.lableDate.text = splitArr?.first
+        cell.lableTime.text = splitArr?.last
+        }
+        else if splitArr?.count == 1 {
+            cell.lableDate.text = splitArr?.first
+        }
         cell.lableDot.layer.cornerRadius = 4.0
         cell.lableDot.layer.borderWidth = 2.0
         cell.lableDot.layer.borderColor = UIColor(red: 184.0/255, green: 184.0/255, blue: 184.0/255, alpha: 1.0).cgColor

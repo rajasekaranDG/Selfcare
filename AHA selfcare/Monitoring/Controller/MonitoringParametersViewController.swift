@@ -43,21 +43,27 @@ class MonitoringParametersViewController: UIViewController {
         // Do any additional setup after loading the view.
         //
         if(self.moduleType == "Blood Pressure"){
+            labelTitle.text = "BP - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertBloodPressureMonitoringParameters()
         }
         else if(self.moduleType == "Blood Glucose"){
+            labelTitle.text = "BG - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertBloodGlucoseMonitoringParameters()
         }
         else if(self.moduleType == "Weight"){
+            labelTitle.text = "Weight - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertWeightMonitoringParameters()
         }
         else if(self.moduleType == "Sleep"){
+            labelTitle.text = "Sleep - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertSleepMonitoringParameters()
         }
         else if(self.moduleType == "Activity"){
+            labelTitle.text = "Sprint - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertActivityMonitoringParameters()
         }
         else if(self.moduleType == "Sports"){
+            labelTitle.text = "Sports - Mono Params"
             self.arrayOfItems = HelpAppManager.shared().insertSportsMonitoringParameters()
         }
         self.scrollViewMain.contentSizeToFit()
@@ -346,6 +352,25 @@ class MonitoringParametersViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
         
     }
+    
+    // MARK: - UITextFieldDelegate
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//        let textFieldText: NSString = (textField.text ?? "") as NSString
+//        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+//
+//
+//
+//        if textField == textFirstName {
+//            let maxLength = NAMELIMIT
+//            return txtAfterUpdate.count <= maxLength
+//        }
+//        else if textField == textLastName {
+//            let maxLength = NAMELIMIT
+//            return txtAfterUpdate.count <= maxLength
+//        }
+//        return true
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
