@@ -344,9 +344,9 @@ class StartMonitoringViewController: UIViewController {
             
             let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
             
-            self.scrollMain.setWidth(PageWidth)
-            self.scrollMain.contentSize = CGSize(width: PageWidth, height: 350)
-            
+            self.scrollMain.setWidth(self.view.frame.size.width) //PageWidth
+            self.scrollMain.contentSize = CGSize(width: self.view.frame.size.width, height: 350)
+            print(self.view.frame.size.width)
             AppManager.sharedInstance.viewShadow(MainView: self.viewSystolic)
             AppManager.sharedInstance.viewShadow(MainView: self.viewDiastolic)
             AppManager.sharedInstance.viewShadow(MainView: self.viewHeartRate)

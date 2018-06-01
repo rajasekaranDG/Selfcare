@@ -138,6 +138,40 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate, MFMai
         self.present(alertController, animated: true, completion: nil)
         
     }
+    // MARK: - UITextFieldDelegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+        
+        if(textField == self.textEmailId){
+            let newLength = textField.text!.count + string.count - range.length
+            if(newLength > 0){
+                self.lblErrorEmail.isHidden = true
+            }
+            else {
+                self.lblErrorEmail.isHidden = false
+            }
+            let maxLength = 124
+            return txtAfterUpdate.count <= maxLength
+        }
+        else if(textField == self.textUserName){
+            let newLength = textField.text!.count + string.count - range.length
+            if(newLength > 0){
+                self.lblErrorUsername.isHidden = true
+            }
+            else {
+                self.lblErrorUsername.isHidden = false
+            }
+            let maxLength = 24
+            return txtAfterUpdate.count <= maxLength
+        }
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

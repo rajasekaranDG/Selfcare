@@ -1254,8 +1254,9 @@ class AppManager: NSObject {
         return arrayOfItem
     }
     func convertNumber(answerString : NSString)-> NSNumber {
-        let targetCaloriesBurnInt = Int(answerString as String )
-        let targetCaloriesBurnNumber = NSNumber(value:targetCaloriesBurnInt!)
+//        let targetCaloriesBurnInt = Int(answerString as String )
+         let targetCaloriesBurnDouble = Double(answerString as String )
+        let targetCaloriesBurnNumber = NSNumber(value:targetCaloriesBurnDouble!)
         return targetCaloriesBurnNumber
     }
     func assessmentStartFlag() -> String {

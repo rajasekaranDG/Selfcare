@@ -48,7 +48,7 @@ class ProfileViewController: UIViewController {
         
         let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
         let PageHeight : CGFloat = (iPhone6Pluse) ? 750 : (iPhone6) ? 690 : 690
-        self.scrollMain.contentSize = CGSize(width: PageWidth, height: PageHeight)
+        self.scrollMain.contentSize = CGSize(width: self.view.frame.size.width, height: PageHeight)
 
         AppManager.sharedInstance.viewShadow(MainView: self.viewInfo)
         AppManager.sharedInstance.viewShadow(MainView: self.viewPlace)

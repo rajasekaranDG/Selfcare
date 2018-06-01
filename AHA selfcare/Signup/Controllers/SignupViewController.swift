@@ -63,11 +63,11 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         let textFieldText: NSString = (textField.text ?? "") as NSString
         let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
         
-        if range.length + range.location > textField.text!.characters.count {
+        if range.length + range.location > textField.text!.count {
             return false
         }
         if(textField == self.textPhoneNumber){
-            let newLength = textField.text!.characters.count + string.characters.count - range.length
+            let newLength = textField.text!.count + string.count - range.length
             if(newLength > 0){
                 self.lblMobileNumber.isHidden = false
                 UIView.animate(withDuration: 0.4, animations: {() -> Void in
@@ -211,9 +211,10 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         if self.isEmptyTextField(self.textName.text!) {
             self.lblLineUsername.backgroundColor = UIColor.red
             self.lblErrorUsername.isHidden = false
+            return
         }
         if self.isEmptyTextField(self.textEmail.text!) {
-            self.lblErrorEmail.backgroundColor = UIColor.red
+            self.lblLineEmail.backgroundColor = UIColor.red
             self.lblErrorEmail.isHidden = false
             self.lblErrorEmail.text = "Enter email id"
             return
@@ -228,6 +229,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             self.lblLinePassword.backgroundColor = UIColor.red
             self.lblErrorPassword.isHidden = false
             self.lblErrorPassword.text = "Enter Password"
+            return
         }
         if (self.textPassword.text?.count)! < 6 {
             self.lblLinePassword.backgroundColor = UIColor.red
@@ -238,10 +240,16 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         if self.isEmptyTextField(self.textPhoneNumber.text!) {
             self.lblLinePhone.backgroundColor = UIColor.red
             self.lblErrorPhone.isHidden = false
+            return
         }
         if self.stringDOB == "" {
             self.lblLineDOB.backgroundColor = UIColor.red
             self.lblErrorDOB.isHidden = false
+            return
+        }
+        if isAgreeTerms == false {
+            self.showAlert(message: "Please Agree to Terms and Conditions")
+            return
         }
         if(!(self.isEmptyTextField(self.textName.text!)) && (self.isValidEmail(self.textEmail.text!)) && !(self.isEmptyTextField(self.textPassword.text!)) && !(self.isEmptyTextField(self.textPhoneNumber.text!)) && !(self.isEmptyTextField(self.lableDateOfBirth.text!)) && (self.lableDateOfBirth.text != "Enter Your Date Of Birth")) && isAgreeTerms != false {
 

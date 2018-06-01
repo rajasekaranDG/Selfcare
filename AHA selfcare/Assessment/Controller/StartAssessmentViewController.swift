@@ -62,8 +62,8 @@ class StartAssessmentViewController: UIViewController {
         
         let PageWidth : CGFloat = (iPhone6Pluse) ? 414 : (iPhone6) ? 375 : 320
         
-        self.scrollMain.setWidth(PageWidth)
-        self.scrollMain.contentSize = CGSize(width: PageWidth, height: 350)
+        self.scrollMain.setWidth(self.view.frame.size.width)
+        self.scrollMain.contentSize = CGSize(width: self.view.frame.size.width, height: 350)
         
         AppManager.sharedInstance.viewShadow(MainView: self.viewDiabetes)
         AppManager.sharedInstance.viewShadow(MainView: self.viewBMI)

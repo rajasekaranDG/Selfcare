@@ -88,25 +88,38 @@ class ViewNumber: UIView,UITextFieldDelegate {
             }
         }
         self.button = UIButton(type: UIButtonType.custom)
-        button.setTitle("Return", for: UIControlState.normal)
+        button.setTitle("", for: UIControlState.normal) //Return
         button.setTitleColor(UIColor.black, for: UIControlState.normal)
-        button.frame =  CGRect(x: 0, y: 163, width: 106, height: 53)
+        button.frame =  CGRect(x: 0, y: 163, width: 106, height: 0)//53
         button.adjustsImageWhenHighlighted = false
-        button.addTarget(self, action: #selector(ViewNumber.ReturenKeyBoard(_:)), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(ViewNumber.ReturenKeyBoard(_:)), for: .touchUpInside)
         self.TxtMessage.delegate = self
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Prevent crashing undo bug – see note below.
-        if range.length + range.location > (textField.text?.characters.count)! {
+        
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+       
+        
+        if range.length + range.location > (textField.text?.count)! {
             return false
         }
-        if((typeString.isEqual(to: "systolic")) || (typeString.isEqual(to: "diastolic")) || (typeString.isEqual(to: "bloodGlucoseValue"))) {
-            let newLength = textField.text!.characters.count + string.characters.count - range.length
+        if((typeString.isEqual(to: "systolic")) || (typeString.isEqual(to: "diastolic")) || (typeString.isEqual(to: "heartRate"))) {
+            let newLength = textField.text!.count + string.count - range.length
             return (newLength > 3) ? false : true
         }
+        else if (typeString.isEqual(to: "bloodGlucoseValue")) {
+            let newLength = textField.text!.count + string.count - range.length
+            return (newLength > 5) ? false : true
+        }
+        else if ((typeString.isEqual(to: "wgt")) || (typeString.isEqual(to: "height"))) {
+            let newLength = textField.text!.count + string.count - range.length
+            return (newLength > 6) ? false : true
+        }
         var Message : NSString = ""
-        let newLength: Int = (textField.text?.characters.count)! + string.characters.count - range.length
-        if (newLength < (self.TxtMessage.text?.characters.count)!) {
+        let newLength: Int = (textField.text?.count)! + string.count - range.length
+        if (newLength < (self.TxtMessage.text?.count)!) {
             Message = HelpAppManager.shared().subStringMessage(self.TxtMessage.text!) as NSString
         }
         else if(newLength > 0){
@@ -129,7 +142,9 @@ class ViewNumber: UIView,UITextFieldDelegate {
             let MonitoringParametersVC : MonitoringParametersViewController = (self.delegate as! MonitoringParametersViewController)
             MonitoringParametersVC.updateAnswer(Tag: self.tag, answer: Message as String)
         }
-        return true
+//        return true
+        let maxLength = 6
+        return txtAfterUpdate.count <= maxLength
     }
     @IBAction func ReturenKeyBoard(_ sender: Any) {
         self.button.isHidden = true
@@ -139,7 +154,7 @@ class ViewNumber: UIView,UITextFieldDelegate {
     func keyboardWillShow(note : NSNotification) -> Void{
         
         DispatchQueue.main.async(execute: {() -> Void in
-            self.button.isHidden = false
+            self.button.isHidden = true//false
             let keyBoardWindow = UIApplication.shared.windows.last
             self.button.frame = CGRect(x: 0, y: (keyBoardWindow?.frame.size.height)!-53, width: 106, height: 53)
             keyBoardWindow?.addSubview(self.button)

@@ -186,7 +186,7 @@ class HistoryViewController: UIViewController {
         let splitArr = dateandTime?.components(separatedBy: " ")
         if splitArr?.count == 2 {
         cell.lableDate.text = splitArr?.first
-        cell.lableTime.text = splitArr?.last
+        
         }
         else if splitArr?.count == 1 {
             cell.lableDate.text = splitArr?.first
@@ -221,6 +221,12 @@ class HistoryViewController: UIViewController {
             
             cell.lableActivity.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Blood Pressure %@/%@",DictionaryDetail["systolic"].stringValue,DictionaryDetail["diastolic"].stringValue) as String, highlight: "Blood Pressure", h2: "", size: 16, FontName: kFontSanFranciscoMedium)
             cell.lableBP.text = String(format: "%@ BPM",DictionaryDetail["heartRate"].stringValue) as String
+            
+            let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
         }
         else if(self.moduleType == "Blood Glucose") {
             cell.lableMessage.isHidden = false
@@ -256,6 +262,12 @@ class HistoryViewController: UIViewController {
             
             cell.viewMessage.setHeight(cell.lableContext.maxy() + 10)
             cell.lableLine.setHeight(cell.viewMessage.height()+15)
+            
+             let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
         }
         else if(self.moduleType == "Weight") {
             cell.lableMessage.isHidden = false
@@ -263,10 +275,25 @@ class HistoryViewController: UIViewController {
             let bmiValue = Double(DictionaryDetail["bmi"].stringValue)
             let roundOffValue = String(format: "%.2f", bmiValue ?? "")
             cell.lableMessage.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Weight is  %@ /  BMI is %@",DictionaryDetail["wgt"].stringValue, roundOffValue ) as String, highlight: "Weight is", h2: "BMI is", size: 18, FontName: kFontSanFranciscoMedium)
+            
+            let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
         }
         else if(self.moduleType == "Sleep") {
             cell.lableMessage.isHidden = false
             cell.lableMessage.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Hours slept %@ /  Awaken %@",DictionaryDetail["hoursSlept"].stringValue, DictionaryDetail["awaken"].stringValue) as String, highlight: "Hours slept", h2: "Awaken", size: 18, FontName: kFontSanFranciscoMedium)
+            
+            let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
+           
         }
         else if(self.moduleType == "Activity") {
             cell.lableSport.isHidden = false
@@ -275,6 +302,13 @@ class HistoryViewController: UIViewController {
             cell.lableActivity.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Distance travelled  %@",DictionaryDetail["distanceTraveled"].stringValue) as String, highlight: "Distance travelled", h2: "", size: 18, FontName: kFontSanFranciscoMedium)
 
             cell.lableSport.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Steps  %@",DictionaryDetail["steps"].stringValue) as String, highlight: "Steps", h2: "", size: 18, FontName: kFontSanFranciscoMedium)
+            
+            let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
         }
         else if(self.moduleType == "Sports") {
             cell.lableSport.isHidden = false
@@ -282,6 +316,13 @@ class HistoryViewController: UIViewController {
             cell.lableActivity.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Sports  %@",DictionaryDetail["sportName"].stringValue) as String, highlight: "Sports", h2: "", size: 18, FontName: kFontSanFranciscoMedium)
             
             cell.lableSport.attributedText = AppManager.sharedInstance.attributedTextWithColor(text: NSString(format: "Calories  %@",DictionaryDetail["calories"].stringValue) as String, highlight: "Calories", h2: "", size: 18, FontName: kFontSanFranciscoMedium)
+            
+            let stringDate : String = AppManager.sharedInstance.conertDateStringToString(Date: DictionaryDetail[self.setKeyName()].stringValue, Format: "yyyy-MM-dd hh:mm")
+
+            let splitArr = stringDate.components(separatedBy: " ")
+            if splitArr.count == 2 {
+                cell.lableTime.text = splitArr.last
+            }
         }//184
 
         return cell

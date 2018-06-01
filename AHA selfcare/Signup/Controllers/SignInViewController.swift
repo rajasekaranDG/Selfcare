@@ -234,6 +234,34 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    // MARK: - UITextFieldDelegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+       
+        if(textField == self.textUserName){
+            let newLength = textField.text!.count + string.count - range.length
+            if(newLength > 0){
+                self.lblErrorUsername.isHidden = true
+            }
+            else {
+                self.lblErrorUsername.isHidden = false
+            }
+        }
+        else if(textField == self.textPassword){
+            let newLength = textField.text!.count + string.count - range.length
+            if(newLength > 0){
+                self.lblErrorPassword.isHidden = true
+            }
+            else {
+                self.lblErrorPassword.isHidden = false
+            }
+        }
+        let maxLength = 24
+        return txtAfterUpdate.count <= maxLength
+    }
+        
     /*
     // MARK: - Navigation
 

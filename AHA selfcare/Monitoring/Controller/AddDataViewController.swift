@@ -35,7 +35,9 @@ class AddDataViewController: UIViewController {
     func dataAdded() {
         if self.delegate is MonitoringDetailViewController {
             let MonitoringDetailVC : MonitoringDetailViewController = (self.delegate as! MonitoringDetailViewController)
-            MonitoringDetailVC.HistoryClick("")
+//            MonitoringDetailVC.HistoryClick("")
+             MonitoringDetailVC.SummaryClick("")
+            
         }
     }
     func fetchMonitoringParameters() {

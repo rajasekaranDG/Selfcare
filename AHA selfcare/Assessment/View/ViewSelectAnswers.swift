@@ -64,10 +64,10 @@ class ViewSelectAnswers: UIView {
                                                     AppDelegate.appDelegate().window?.addSubview(viewInfoMessage)
                                                     viewInfoMessage.updateView()
                                                   }),
-                                                  "link": UIColor(red: 42.0/255.0, green: 185.0/255.0, blue: 181.0/255.0, alpha: 1.000)]
+                                                  "link": UIColor(red: 27.0/255.0, green: 27.0/255.0, blue: 27.0/255.0, alpha: 1.000)]
                 
-                let action: NSString = "<info>?</info>"
-                let message: NSString = "\(self.titleString)  \(action)" as NSString
+                let action: NSString = "<info>info</info>"
+                let message: NSString = "\(self.titleString)?  \(action)" as NSString
                 self.lblTitle.attributedText = message.attributedString(withStyleBook: style)
             }
         }

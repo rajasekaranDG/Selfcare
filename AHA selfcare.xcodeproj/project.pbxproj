@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		44BFE91A20B697E700FDC5C1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91920B697E700FDC5C1 /* Session.swift */; };
 		44BFE91D20B698B300FDC5C1 /* SharedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFE91C20B698B300FDC5C1 /* SharedObject.swift */; };
+		44D046B920C16E33005AFD9F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EAB1851EC35C2B008B82F0 /* HistoryViewController.swift */; };
 		44DF6B0C20BD2C0D00344B05 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF6B0A20BD2C0C00344B05 /* PrivacyPolicyViewController.swift */; };
 		44DF6B0D20BD2C0D00344B05 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44DF6B0B20BD2C0C00344B05 /* PrivacyPolicyViewController.xib */; };
 		44DF6B1020BD5EE400344B05 /* TermsandPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DF6B0E20BD5EE400344B05 /* TermsandPolicyViewController.swift */; };
@@ -2301,6 +2302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				971091A31EBC1131001CEB3A /* AHA_selfcareTests.swift in Sources */,
+				44D046B920C16E33005AFD9F /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2486,7 +2488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ahahealth.io;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "16e1db9a-0efb-4557-86a9-86251e08460a";
+				PROVISIONING_PROFILE = "9d711c02-9974-4104-ad2f-4742b5e5c627";
 				PROVISIONING_PROFILE_SPECIFIER = AHA_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = "AHA selfcare/AHA selfcare-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

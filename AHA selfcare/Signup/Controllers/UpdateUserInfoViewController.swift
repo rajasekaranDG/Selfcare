@@ -177,6 +177,7 @@ class UpdateUserInfoViewController: UIViewController,UITextFieldDelegate {
         
     }
     @IBAction func genderSelect(_ sender : UIButton) {
+        self.view .endEditing(true)
         if(sender.tag == 1){
             self.genderString = "Male"
             self.lableGender.text = "Male"

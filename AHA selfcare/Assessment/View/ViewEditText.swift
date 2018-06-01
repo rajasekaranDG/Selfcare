@@ -37,7 +37,7 @@ class ViewEditText: UIView,UITextFieldDelegate {
     func keyboardWillShow(note : NSNotification) -> Void{
         
         DispatchQueue.main.async(execute: {() -> Void in
-            self.button.isHidden = false
+            self.button.isHidden = true//false
             let keyBoardWindow = UIApplication.shared.windows.last
             self.button.frame = CGRect(x: 0, y: (keyBoardWindow?.frame.size.height)!-53, width: 106, height: 53)
             keyBoardWindow?.addSubview(self.button)

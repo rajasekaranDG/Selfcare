@@ -55,7 +55,7 @@
                                     <rect key="frame" x="10" y="3" width="315" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                     <connections>
                                         <outlet property="delegate" destination="ADQ-Ve-6Nm" id="j7Q-FT-yKY"/>
                                     </connections>

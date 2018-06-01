@@ -246,8 +246,9 @@ class CardiovascularQuestionViewController: UIViewController {
                     Parsedictionary.setObject(floatValue, forKey: dictionaryDetails["addParams"] as! String as NSCopying)
                 }
                 else {
-                    let intValue : Int = Int(dictionaryDetails["Answer"] as! String)!
-                    Parsedictionary.setObject(intValue, forKey: dictionaryDetails["addParams"] as! String as NSCopying)
+//                    let intValue : Int = Int(dictionaryDetails["Answer"] as! String)!
+                    let doubleValue : Double = Double(dictionaryDetails["Answer"] as! String)!
+                    Parsedictionary.setObject(doubleValue, forKey: dictionaryDetails["addParams"] as! String as NSCopying)
                 }
             }
             var multableparams : NSMutableDictionary = NSMutableDictionary()

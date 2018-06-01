@@ -191,9 +191,12 @@ class MonitoringParametersViewController: UIViewController {
             let AnswerString : String = dictionaryDetails["Answer"] as! String
             if(AnswerString != ""){
                 if typeString == "Number"{
-                    let AnswerInt = Int(dictionaryDetails["Answer"] as! String)
-                    let targetHighPressNumber = NSNumber(value:AnswerInt!)
+//                    let AnswerInt = Int(dictionaryDetails["Answer"] as! String)
+                    let AnswerDouble = Double(dictionaryDetails["Answer"] as! String)
+                    if AnswerDouble != nil {
+                    let targetHighPressNumber = NSNumber(value:AnswerDouble!)
                     Parsedictionary.setObject(targetHighPressNumber, forKey: dictionaryDetails["addParams"] as! String as NSCopying)
+                    }
                 }
                 else {
                     Parsedictionary.setObject(dictionaryDetails["Answer"] as! String, forKey: dictionaryDetails["addParams"] as! String as NSCopying)

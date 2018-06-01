@@ -34,10 +34,19 @@ class ViewEditNumber: UIView,UITextFieldDelegate {
         self.TxtMessage.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Prevent crashing undo bug – see note below.
+        
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let txtAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+        
+        let maxLength = 6
+        return txtAfterUpdate.count <= maxLength
+    }
     func keyboardWillShow(note : NSNotification) -> Void{
         
         DispatchQueue.main.async(execute: {() -> Void in
-            self.button.isHidden = false
+            self.button.isHidden = true//false
             let keyBoardWindow = UIApplication.shared.windows.last
             self.button.frame = CGRect(x: 0, y: (keyBoardWindow?.frame.size.height)!-53, width: 106, height: 53)
             keyBoardWindow?.addSubview(self.button)
@@ -93,11 +102,12 @@ class ViewEditNumber: UIView,UITextFieldDelegate {
         }
         self.TxtMessage.delegate = self
         self.button = UIButton(type: UIButtonType.custom)
-        button.setTitle("Return", for: UIControlState.normal)
+        button.setTitle("Test", for: UIControlState.normal) //Return
         button.setTitleColor(UIColor.black, for: UIControlState.normal)
-        button.frame =  CGRect(x: 0, y: 163, width: 106, height: 53)
+        button.frame =  CGRect(x: 0, y: 163, width: 0, height: 0)//w 106 53
         button.adjustsImageWhenHighlighted = false
-        button.addTarget(self, action: #selector(ViewEditText.ReturenKeyBoard(_:)), for: .touchUpInside)
+        self.button.isHidden = true
+//        button.addTarget(self, action: #selector(ViewEditText.ReturenKeyBoard(_:)), for: .touchUpInside)
     }
     @IBAction func PreviousClick(_ sender : Any) {
         AppDelegate.appDelegate().window?.endEditing(true)
