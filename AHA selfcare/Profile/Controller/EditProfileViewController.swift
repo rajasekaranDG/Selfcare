@@ -269,7 +269,7 @@ class EditProfileViewController: UIViewController,UITextFieldDelegate {
         })
     }
     func isEmptyTextField(_ txt: String) -> Bool {
-        return ((txt == "") || (txt.characters.count ) == 0)
+        return ((txt == "") || (txt.count ) == 0)
     }
     func isValidEmail(_ checkString: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
